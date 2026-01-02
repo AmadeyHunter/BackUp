@@ -126,7 +126,7 @@ Section:NewButton("The Lost Mines", "??? (Repository from AmadeyHunter)", functi
 loadstring(game:HttpGet('https://raw.githubusercontent.com/AmadeyHunter/BackUp/refs/heads/main/The-Lost-Mines, true'))()
 end)
 local Tab = Window:NewTab("@Greed_gamingMobile Extras")
-local Section = Tab:NewSection(""@Greed_gamingMobile's Utilities")
+local Section = Tab:NewSection("@Greed_gamingMobile's Utilities")
 Section:NewButton("kodbolhub", "kodbolx", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/kodbolx/kodbolhub/refs/heads/main/Kodbol%20Hub/Main.lua, true"))()
 end)
