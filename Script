@@ -1,0 +1,3 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/daiayday/HardcoreRemastered/refs/heads/main/obf_L6zO2N0sG5ehDHd56JBc5z70TZ2piVOvIqsgE88741HXGrwv7E4qd6c8axu8z4oh.lua.txt", true))()
+loadstring(game:HttpGet("https://glot.io/snippets/h7zlma80wm/raw", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/binhlforsaken156-sys/OVERDOORS-2.2/refs/heads/main/overdoors-hardcore-full.lua", true))()
