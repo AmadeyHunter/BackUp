@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DenDenZZZ/Kavo-UI-Library/main/Kavo.lua", true))()
-local Window = Library.CreateLib("Doors Modes Hub Remake V8", "DarkTheme")
+local Window = Library.CreateLib("Doors Modes Hub Remake V7", "DarkTheme")
 local Tab = Window:NewTab("Modes")
 local Section = Tab:NewSection("Awaiting/Packs")
 Section:NewButton("Scripts Pack", "xvc200", function()
