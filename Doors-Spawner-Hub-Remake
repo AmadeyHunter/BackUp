@@ -1,0 +1,542 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DenDenZZZ/Kavo-UI-Library/main/Kavo.lua", true))()
+local Window = Library.CreateLib("Doors Utilities Hub Remake V10", "DarkTheme")
+local Tab = Window:NewTab("Modes")
+local Section = Tab:NewSection("Awaiting/Packs")
+Section:NewButton("Scripts Pack", "xvc200", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Piw5bqGq", true))()
+end)
+Section:NewButton("Scripts Mode", "by Munciseekawa (Repository from hi822010)", function()
+loadstring(game:HttpGet("https://github.com/hi822010/Scripts-Mode/raw/refs/heads/main/Loader.luau", true))()
+end)
+Section:NewButton("Modez", "no12356", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/no12356/doors-modes-room-and-floor/main/doors%20modes%20and%20floors", true))()
+end)
+Section:NewButton("Hardcore Remake", "by Jay", function()
+loadstring(game:HttpGet("https://glot.io/snippets/gp5pu59o7f/raw", true))()
+end)
+local Section = Tab:NewSection("Inspiration")
+Section:NewButton("@Gummy_playz-h2h/#idkman06483's Modes Hub V9", "@Rip_Survival", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/6tHCQ2Bm", true))()
+end)
+Section:NewButton("GuestlyTheGreatestGuest's Old Hub That Died", "TheDarkMan1334", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/My%20old%20hub%20that%20died", true))()
+end)
+local Section = Tab:NewSection("Modes")
+Section:NewButton("Broken", "TheDarkMan1334", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TheDarkMan1334/Broken-mode/refs/heads/main/BrokenMode%20Version%201.8%20Fix", true))()
+end)
+Section:NewButton("Creepy", "DripCapybara", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DripCapybara/Doors-Modes/refs/heads/main/CreepyMode/ObfuscatedMain.lua", true))()
+end)
+Section:NewButton("Degenerate", "GuestlyTheGreatestGuest", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/My-brand-new-Degenerate-Mode%20(New%20Obfuscator)", true))()
+end)
+Section:NewButton("Fear", "lelele78", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lelele78/Securityproject/refs/heads/main/FEAROBF", true))()
+end)
+Section:NewButton("Forgotten Mode", "Working Perfectly", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Wy7PSxjz"))()
+end)
+Section:NewButton("Fragmented", "talales", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/talales/Nhankg/refs/heads/main/fragmented%20v5", true))()
+end)
+Section:NewButton("Fragmented Remake", "by Jabiss", function()
+loadstring(game:HttpGet("https://glot.io/snippets/h7zlma80wm/raw", true))()
+end)
+Section:NewButton("Furry", "lelele78", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lelele78/Securityproject/refs/heads/main/Furry", true))()
+end)
+Section:NewButton("Grace", "IdkMyNameLoll", function()
+loadstring(game:HttpGet("https://github.com/IdkMyNameLoll/PublicScripts/raw/refs/heads/main/DoorsXGrace.lua", true))()
+end)
+Section:NewButton("Hallucination", "GuestlyTheGreatestGuest", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/Hallucination-Mode-(Unsettling-Mode)-Made-by-Celestian-On-Discord", true))()
+end)
+Section:NewButton("Hardcore", "localplayerr", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/localplayerr/Doors-stuff/refs/heads/main/Hardcore%20v4%20recreate/main%20code", true))()
+end)
+Section:NewButton("Hardcore Remastered", "daiayday", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/daiayday/HardcoreRemastered/refs/heads/main/obf_L6zO2N0sG5ehDHd56JBc5z70TZ2piVOvIqsgE88741HXGrwv7E4qd6c8axu8z4oh.lua.txt", true))()
+end)
+Section:NewButton("Impossible", "lelele78", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lelele78/Securityproject/refs/heads/main/Impossible", true))()
+end)
+Section:NewButton("Lunacy", "GuestlyTheGreatestGuest", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/Lunacy-Mode-Made-By-Guestly-Vuivuiviu2-Nowhywhat-And-Voorpr0", true))()
+end)
+Section:NewButton("Mayhem", "localplayerr", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/localplayerr/Doors-stuff/refs/heads/main/Mayhem%20mode%20recreate/Code", true))()
+end)
+Section:NewButton("Mental", "TheLastOne5778", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TheLastOne5778/Read/refs/heads/main/Mental%20Mode", true))()
+end)
+Section:NewButton("Modeee (Random/IDK)", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Doors-sieu-don-mode/refs/heads/main/Modeee", true))()
+end)
+Section:NewButton("Nightmare Remake", "kodbolx", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kodbol/Doors/refs/heads/main/Nightmare%20Mode/Main.lua", true))()
+end)
+Section:NewButton("Overdoors V2.3.2", "binhlforsaken156-sys", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/binhlforsaken156-sys/V2.3.2/refs/heads/main/overdoors-broken-guiding-hardcore.lua", true))()
+end)
+Section:NewButton("Improbable Overdoors V2.3.2", "AmadeyHunter", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AmadeyHunter/BackUp/refs/heads/main/Improbable-Overdoors-Base-V2.3.2", true))()
+end)
+Section:NewButton("Super Crazy", "eoyoustme2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme2/dm123/refs/heads/main/super%20crazy%20mode", true))()
+end)
+Section:NewButton("Terror", "Teilsthebfdifany", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Teilsthebfdifan/Modhub-assets/refs/heads/main/TerrorModeOBF.lua", true))()
+end)
+Section:NewButton("Ultra Hard", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Doors-ultra-hard-mode/refs/heads/main/Ultra-hard-biGGG", true))()
+end)
+Section:NewButton("Voidness", "GuestlyTheGreatestGuest", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/Voidness-Mode-Made-By-Guestly-Vuivuiviu2-And-Voorpr0", true))()
+end)
+local Section = Tab:NewSection("OGs (Super Hard Mode & Hotel-)")
+Section:NewButton("Hardcore", "by Nonie & Ping", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/ZHkagnnY"))()
+end)
+---Section:NewButton("Impossible", "Ukazix", function()
+---loadstring(game:HttpGet("https://raw.githubusercontent.com/Ukazix/impossible-mode/refs/heads/main/Protected_79.lua.txt", true))()
+---end)
+local Tab = Window:NewTab("Doors ESP Hubs | 2025-12-26 (Might Need Some Keys)")
+local Section = Tab:NewSection("Named")
+Section:NewButton("Scripts Mode ESP", "Munciseekawa", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Munciseekawa/Utilities/refs/heads/main/DOORS/Private", true))()
+end)
+Section:NewButton("Hardcore ESP", "Qiwikox12", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Qiwikox12/stubrawl/refs/heads/main/DoorsHardcoreESP.txt", true))()
+end)
+Section:NewButton("T1", "??? (Repository from AmadeyHunter)", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AmadeyHunter/BackUp/refs/heads/main/T1", true))()
+end)
+Section:NewButton("Nullfire", "TeamNullFire", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TeamNullFire/NullFire/main/loader.lua", true))()
+end)
+Section:NewButton("Astral", "Oogway", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/8cKJvTwg"))()
+end)
+Section:NewButton("Saturn", "JScripter-Lua", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JScripter-Lua/Saturn_Hub_Products/refs/heads/main/Saturn_Hub_Doors.lua", true))()
+end)
+Section:NewButton("kodbolhub", "kodbolx", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kodbolx/kodbolhub/refs/heads/main/Kodbol%20Hub/Main.lua", true))()
+end)
+Section:NewButton("Kitty Cats", "CatEnddroid", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CatEnddroid/Kitty-Cats-Doors-Beta/refs/heads/main/hub.lua", true))()
+end)
+Section:NewButton("BlackKing", "KINGHUB01", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub", true))()
+end)
+Section:NewButton("LHKing", "LHking123456", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LHking123456/Dhjfdr9hk/refs/heads/main/Doors", true))()
+end)
+Section:NewButton("Sexsation", "???", function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/730854e5b6499ee91deb1080e8e12ae3.lua"))()
+end)
+Section:NewButton("MSPaint", "mspaint.cc", function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/002c19202c9946e6047b0c6e0ad51f84.lua", true))()
+end)
+Section:NewButton("MsDoors", "msdoors.xyz", function()
+loadstring(game:HttpGet("https://www.msdoors.xyz/script", true))()
+end)
+Section:NewButton("Leaf", "???", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/wbJTDuKw", true))()
+end)
+Section:NewButton("Devils", "hassanxzayn-lua", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/doors/main/devilshubgui", true))()
+end)
+Section:NewButton("FFJ", "FFJ1", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua", true))()
+end)
+Section:NewButton("DarkCheatClient", "VaniaPerets", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VaniaPerets/FolderGui-FolderHub/main/loader.lua", true))()
+end)
+Section:NewButton("Darkrai X", "GamingScripter", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Evade", true))()
+end)
+Section:NewButton("Apple", "ImTienNguyenZ", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ImTienNguyenZ/AppleHubOnTop/main/Loader.lua", true))()
+end)
+Section:NewButton("BlackKing X BobHub", "???", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/R8QMbhzv"))()
+end)
+Section:NewButton("Rapture", "RaptureOfc", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RaptureOfc/Rapture-Doors-Released-1.0-New/refs/heads/main/Doors%20Release%20Rapture", true))()
+end)
+Section:NewButton("Vynixius", "vynixius.win", function()
+loadstring(game:HttpGet("https://vynixius.win/loader.luau", true))()
+end)
+Section:NewButton("UtilitiesGUI", "plamen6789", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/plamen6789/UtilitiesHub/main/UtilitiesGUI", true))()
+end)
+local Section = Tab:NewSection("Unnamed")
+Section:NewButton("DOORS Script Pastebin - Esp, WalkSpeed, Skip LVL", "???", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/h8Gvq7k3"))()
+end)
+Section:NewButton("DOORS Script Pastebin – Auto Finish, No Jumpscares", "???", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/9QPGnLx6"))()
+end)
+local Tab = Window:NewTab("Extras")
+local Section = Tab:NewSection("Spawners")
+Section:NewButton("Hardcore A-60 Spawner", "Idk-lol2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Idk-lol2/a-60aa/refs/heads/main/---%3D%3D%3D%3D%3D%3D%20a-60%20agresiv%20spawner%20%3D%3D%3D%3D%3D%3D---.txt", true))()
+end)
+Section:NewButton("Him Spawner", "trungdepth-dot", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/trungdepth-dot/Him-entity-doors/refs/heads/main/Him", true))()
+end)
+Section:NewButton("Hungered Spawner", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Hungerd/refs/heads/main/Entity", true))()
+end)
+Section:NewButton("Munci Spawner", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Munci-entity/refs/heads/main/Munci-20", true))()
+end)
+Section:NewButton("Trauma Spawner", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Trauma-entity/refs/heads/main/Trauma", true))()
+end)
+Section:NewButton("Black Spawner", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Black-smile/refs/heads/main/Black", true))()
+end)
+Section:NewButton("Chaotic Spawner", "J63633S", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Chaotic", true))()
+end)
+Section:NewButton("Shocker Spawner", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Shocker-entity/refs/heads/main/Shocker", true))()
+end)
+Section:NewButton("Surge Spawner", "Junbbinopro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Junbbinopro/Surge-entity/refs/heads/main/Surge", true))()
+end)
+Section:NewButton("Depth Spawner", "???", function()
+---====== Load spawner ======---
+local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+---====== Create entity ======---
+local entity = spawner.Create({
+Entity = {
+Name = "depth",
+Asset = "https://github.com/sofianmohamedovich-cmyk/tes/blob/main/depth.rbxm?raw=true",
+HeightOffset = 0
+},
+Lights = {
+Flicker = {
+Enabled = true,
+Duration = 5
+},
+Shatter = true,
+Repair = false
+},
+Earthquake = {
+Enabled = true
+},
+CameraShake = {
+Enabled = true,
+Range = 100,
+Values = {1.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
+},
+Movement = {
+Speed = 100,
+Delay = 2,
+Reversed = false
+},
+Rebounding = {
+Enabled = true,
+Type = "Ambush", -- "Blitz"
+Min = 1,
+Max = 1,
+Delay = 2
+},
+Damage = {
+Enabled = true,
+Range = 40,
+Amount = 50
+},
+Crucifixion = {
+Enabled = true,
+Range = 40,
+Resist = false,
+Break = true
+},
+Death = {
+Type = "Guiding", -- "Curious"
+Hints = {"you've died to depth..", "he usually just rebounds", "Go", "Here"},
+Cause = ""
+}
+})
+---====== Debug entity ======---
+entity:SetCallback("OnSpawned", function()
+print("Entity has spawned")
+end)
+entity:SetCallback("OnStartMoving", function()
+print("Entity has started moving")
+end)
+entity:SetCallback("OnEnterRoom", function(room, firstTime)
+if firstTime == true then
+print("Entity has entered room: ".. room.Name.. " for the first time")
+else
+print("Entity has entered room: ".. room.Name.. " again")
+end
+end)
+entity:SetCallback("OnLookAt", function(lineOfSight)
+if lineOfSight == true then
+print("Player is looking at entity")
+else
+print("Player view is obstructed by something")
+end
+end)
+entity:SetCallback("OnRebounding", function(startOfRebound)
+if startOfRebound == true then
+print("Entity has started rebounding")
+else
+print("Entity has finished rebounding")
+end
+end)
+entity:SetCallback("OnDespawning", function()
+print("Entity is despawning")
+end)
+entity:SetCallback("OnDespawned", function()
+print("Entity has despawned")
+end)
+entity:SetCallback("OnDamagePlayer", function(newHealth)
+if newHealth == 0 then
+print("Entity has killed the player")
+else
+print("Entity has damaged the player")
+end
+end)
+--[[
+entity:SetCallback("CrucifixionOverwrite", function()
+print("Custom crucifixion callback")
+end)
+
+]]--
+---====== Run entity ======---
+entity:Run()
+end)
+local Section = Tab:NewSection("Items")
+Section:NewButton("Tool Giver", "Darli17", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Tools", true))()
+end)
+Section:NewButton("Guiding Candle ", "ChronoAcceleration", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAcceleration/Comet-Development/refs/heads/main/Doors/Assets/Storage/Candle.lua", true))()
+end)
+Section:NewButton("Golden Gummy Flashlight", "aadyian9000", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/aadyian9000/the-thing/main/GoldenGummyFlashlight.lua", true))()
+end)
+Section:NewButton("Crucifix", "PenguinManiack", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PenguinManiack/Crucifix/main/Crucifix.lua", true))()
+end)
+Section:NewButton("Grenade", "???", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/zeFBYYy9"))()
+end)
+Section:NewButton("Infinite Vitamins", "MrNeRD0", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/refs/heads/main/Inf_Vitamins.lua", true))()
+end)
+Section:NewButton("Tool Giver V3 | Doors", "Darli17", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Tools", true))()
+end)
+Section:NewButton("Mischievous Crucifix", "Teilsthebfdifan", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Teilsthebfdifan/Modhub-assets/refs/heads/main/MischievousV2Test.lua", true))()
+end)
+Section:NewButton("Size Stick", "IdkMyNameLoll", function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/IdkMyNameLoll/f0178af2301ca90c09895f10f3e7bd4b/raw/46899ccc3626f3485d85f990012f7ef37ae52e5e/resizerDoorsRemake", true))()
+end)
+local Section = Tab:NewSection("Floors")
+Section:NewButton("Floor 2 Map", "trungdepth-dot", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/trungdepth-dot/Floor-2/refs/heads/main/Floor-2-mapp", true))()
+end)
+Section:NewButton("The Lost Mines", "???", function()
+local Workspace=game:GetService("Workspace")
+local SoundService=game:GetService("SoundService")
+local Lighting=game:GetService("Lighting")
+for _,g in ipairs(SoundService:GetChildren())do
+if g:IsA("SoundGroup")then
+local r=g:FindFirstChild("CaveReverb")or Instance.new("ReverbSoundEffect")
+r.Name="CaveReverb"
+r.Parent=g
+r.DecayTime=2.5
+r.Density=0.8
+r.Diffusion=0.8
+r.DryLevel=0
+r.WetLevel=-0.5
+end
+end
+task.spawn(function()
+if Lighting:FindFirstChild("Atmosphere")then Lighting.Atmosphere:Destroy()end
+Lighting.FogColor=Color3.new(0.133333,0.14902,0.239216)
+Lighting.FogStart=0
+Lighting.FogEnd=100
+end)
+local ROOM_MATERIAL=Enum.Material.Slate
+local ROOM_COLOR=Color3.fromRGB(70,70,70)
+local DOOR_MATERIAL=Enum.Material.Cobblestone
+local DOOR_COLOR=Color3.fromRGB(55,55,55)
+local LOCK_COLOR=Color3.fromRGB(95,95,95)
+local BLACKLIST_NAMES={figure=true,seek=true,screech=true,dupe=true,item=true,pickup=true,books=true,entity=true,monster=true}
+local function isBlacklisted(p)
+local a=p
+while a do
+if a:IsA("Model")or a:IsA("Folder")then
+local n=a.Name:lower()
+for b in pairs(BLACKLIST_NAMES)do
+if n:find(b)then return true end
+end
+end
+a=a.Parent
+end
+return false
+end
+local function isDoorPart(p)
+local m=p:FindFirstAncestorWhichIsA("Model")
+return m and m.Name:lower():find("door")
+end
+local function isLockPart(p)
+return p.Name:lower():find("lock")
+end
+local function stoneifyPart(p)
+if not p:IsA("BasePart")then return end
+if isBlacklisted(p)then return end
+if isDoorPart(p)then
+p.Material=DOOR_MATERIAL
+p.Color=isLockPart(p)and LOCK_COLOR or DOOR_COLOR
+else
+p.Material=ROOM_MATERIAL
+p.Color=ROOM_COLOR
+end
+p.Reflectance=0.05
+p.CastShadow=true
+end
+local function stoneifyRooms()
+local rooms=Workspace:FindFirstChild("CurrentRooms")
+if not rooms then return end
+for _,r in ipairs(rooms:GetChildren())do
+for _,p in ipairs(r:GetDescendants())do
+stoneifyPart(p)
+end
+end
+end
+stoneifyRooms()
+if Workspace:FindFirstChild("CurrentRooms")then
+Workspace.CurrentRooms.ChildAdded:Connect(function(r)
+r.DescendantAdded:Connect(stoneifyPart)
+stoneifyRooms()
+end)
+end
+coroutine.wrap(function()
+while true do
+wait(math.random(150,250))
+local spawner=loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+local e=spawner.Create({
+Entity={Name="Silence",Asset="https://github.com/sofianmohamedovich-cmyk/tes/blob/main/silence.rbxm?raw=true",HeightOffset=0},
+Lights={Flicker={Enabled=true,Duration=10},Shatter=true,Repair=false},
+Earthquake={Enabled=false},
+CameraShake={Enabled=false,Range=100,Values={1.5,20,0.1,1}},
+Movement={Speed=15,Delay=2,Reversed=true},
+Rebounding={Enabled=false,Type="Ambush",Min=1,Max=1,Delay=2},
+Damage={Enabled=true,Range=20,Amount=99},
+Crucifixion={Enabled=true,Range=40,Resist=false,Break=true},
+Death={Type="Guiding",Hints={"You've died to silence..","When the lights flicker, Hide!","She really hates noise...","You can do it!"},Cause=""}
+})
+e:Run()
+end
+end)()
+coroutine.wrap(function()
+while true do
+wait(math.random(300,510))
+local spawner=loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+local e=spawner.Create({
+Entity={Name="Depth",Asset="https://github.com/sofianmohamedovich-cmyk/tes/blob/main/DEPTHNEWREMAKE.rbxm?raw=true",HeightOffset=0},
+Lights={Flicker={Enabled=true,Duration=5},Shatter=true,Repair=false},
+Earthquake={Enabled=false},
+CameraShake={Enabled=true,Range=100,Values={1.5,20,0.1,1}},
+Movement={Speed=150,Delay=1,Reversed=false},
+Rebounding={Enabled=true,Type="Ambush",Min=3,Max=3,Delay=1},
+Damage={Enabled=true,Range=40,Amount=100},
+Crucifixion={Enabled=true,Range=40,Resist=false,Break=true},
+Death={Type="Guiding",Hints={"You've died to depth..","When the lights flicker, Hide!","Use what you've learned from ambush.","You can do it!"},Cause=""}
+})
+e:Run()
+end
+end)()
+coroutine.wrap(function()
+while true do
+wait(math.random(100,210))
+local spawner=loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+local e=spawner.Create({
+Entity={Name="Bloody rush",Asset="https://github.com/sofianmohamedovich-cmyk/tes/blob/main/bloodbathrush.rbxm?raw=true",HeightOffset=0},
+Lights={Flicker={Enabled=true,Duration=3},Shatter=true,Repair=false},
+Earthquake={Enabled=false},
+CameraShake={Enabled=true,Range=100,Values={1.5,20,0.1,1}},
+Movement={Speed=150,Delay=2,Reversed=true},
+Rebounding={Enabled=false,Type="Ambush",Min=5,Max=8,Delay=2},
+Damage={Enabled=true,Range=40,Amount=100},
+Crucifixion={Enabled=true,Range=40,Resist=false,Break=true},
+Death={Type="Guiding",Hints={"You've died to bloody rush..","When the lights flicker, Hide!","Use what you've learned from Rush, it will just spawn infront instead.","You can do it!"},Cause=""}
+})
+e:Run()
+end
+end)()
+coroutine.wrap(function()
+while true do
+wait(math.random(80,155))
+local spawner=loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+local e=spawner.Create({
+Entity={Name="Smiley",Asset="https://github.com/sofianmohamedovich-cmyk/tes/blob/main/smiley.rbxm?raw=true",HeightOffset=0},
+Lights={Flicker={Enabled=true,Duration=20},Shatter=true,Repair=false},
+Earthquake={Enabled=false},
+CameraShake={Enabled=true,Range=100,Values={1.0,10,0.1,1}},
+Movement={Speed=100,Delay=2,Reversed=false},
+Rebounding={Enabled=false,Type="Ambush",Min=5,Max=8,Delay=2},
+Damage={Enabled=true,Range=40,Amount=100},
+Crucifixion={Enabled=true,Range=40,Resist=false,Break=true},
+Death={Type="Guiding",Hints={"You've died to smiley..","When the lights flicker, Hide!","Use what you've learned from Rush, its just slower.","You can do it!"},Cause=""}
+})
+e:Run()
+end
+end)()
+coroutine.wrap(function()
+while true do
+wait(math.random(1000,5000))
+local spawner=loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+local e=spawner.Create({
+Entity={Name="A-60",Asset="https://github.com/sofianmohamedovich-cmyk/tes/blob/main/A60.rbxm?raw=true",HeightOffset=0},
+Lights={Flicker={Enabled=true,Duration=30},Shatter=false,Repair=false},
+Earthquake={Enabled=false},
+CameraShake={Enabled=false,Range=100,Values={1.0,10,0.1,1}},
+Movement={Speed=300,Delay=2,Reversed=false},
+Rebounding={Enabled=true,Type="Ambush",Min=20,Max=30,Delay=3},
+Damage={Enabled=true,Range=40,Amount=100},
+Crucifixion={Enabled=true,Range=40,Resist=false,Break=true},
+Death={Type="Guiding",Hints={"You've died to..","I.. don't know ..?","Im.. not sure how to help, I'm terribly sorry..","Be carful next time."},Cause=""}
+})
+e:Run()
+end
+end)()
+coroutine.wrap(function()
+while true do
+wait(math.random(200,355))
+local spawner=loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+local e=spawner.Create({
+Entity={Name="A-200",Asset="https://github.com/sofianmohamedovich-cmyk/tes/blob/main/A200.rbxm?raw=true",HeightOffset=0},
+Lights={Flicker={Enabled=true,Duration=10},Shatter=false,Repair=false},
+Earthquake={Enabled=false},
+CameraShake={Enabled=false,Range=100,Values={1.0,10,0.1,1}},
+Movement={Speed=30,Delay=5,Reversed=true},
+Rebounding={Enabled=false,Type="Ambush",Min=20,Max=30,Delay=3},
+Damage={Enabled=true,Range=20,Amount=100},
+Crucifixion={Enabled=true,Range=40,Resist=false,Break=true},
+Death={Type="Guiding",Hints={"You've died to..","I.. don't know ..?","Im.. not sure how to help, I'm terribly sorry..","Be carful next time."},Cause=""}
+})
+e:Run()
+end
+end)()
+end)
+local Section = Tab:NewSection("UI/HUD")
+Section:NewButton("Sprint", "trungdepth-dot", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/trungdepth-dot/Sprint-stamina-v2/refs/heads/main/Sprint", true))()
+end)
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("Everyone on the Hub")
+local Section = Tab:NewSection("Originaly Made by @Greed_gamingMobile & @Gummy_playz-h2h/#idkman06483")
+local Section = Tab:NewSection("Updated by #AmadeyHunter")
+local Section = Tab:NewSection("Credits to everybody for playing the mods/modes...")
