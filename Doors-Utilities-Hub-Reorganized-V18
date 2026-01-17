@@ -39,6 +39,7 @@ Section:NewButton("Grace", "IdkMyNameLoll", function() LoadScript("https://githu
 Section:NewButton("Hallucination (Easy)", "GuestlyTheGreatestGuest", function() LoadScript("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/Hallucination-Mode-(Easy-Version)-Made-by-Celestian-on-Discord") end)
 Section:NewButton("Hallucination (Hard)", "GuestlyTheGreatestGuest", function() LoadScript("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/Hallucination-Mode-(Hard-Version)-Made-by-Celestian-On-Discord") end)
 Section:NewButton("Hard", "tranhuuthien958-arch (MuhXd)", function() LoadScript("https://arch-http.vercel.app/files/ProtectHard") end)
+Section:NewButton("Ultra Hard", "tranhuuthien958-arch (Junxd-03)", function() LoadScript("https://arch-http.vercel.app/files/projecthradmodv3") end)
 Section:NewButton("Hardcore", "tranhuuthien958-arch (localplayerr)", function() LoadScript("https://github.com/tranhuuthien958-arch/Hradcore-ramake-by-RealblueYT.-Localplayer/blob/main/Hradcore%20ramake%20by%20RealblueYT.%20LocalPlayer") end)
 Section:NewButton("Hardcore Remake", "by Jay", function() LoadScript("https://glot.io/snippets/gp5pu59o7f/raw") end)
 Section:NewButton("Hardcore Remastered", "daiayday", function() LoadScript("https://raw.githubusercontent.com/daiayday/HardcoreRemastered/refs/heads/main/obf_L6zO2N0sG5ehDHd56JBc5z70TZ2piVOvIqsgE88741HXGrwv7E4qd6c8axu8z4oh.lua.txt") end)
@@ -56,7 +57,6 @@ Section:NewButton("Modeee (Random/IDK)", "Junbbinopro", function() LoadScript("h
 Section:NewButton("Nightmare", "kodbolx", function() LoadScript("https://raw.githubusercontent.com/Kodbol/Doors/refs/heads/main/Nightmare%20Mode/Main.lua") end)
 Section:NewButton("Roomy", "FenzerPlayerPressure", function() LoadScript("https://raw.githubusercontent.com/FenzerPlayerPressure/SubVersions/refs/heads/main/Roomy%20Mode.lua") end)
 Section:NewButton("Terror", "Teilsthebfdifany", function() LoadScript("https://raw.githubusercontent.com/Teilsthebfdifan/Modhub-assets/refs/heads/main/TerrorModeOBF.lua") end)
-Section:NewButton("Ultra Hard", "tranhuuthien958-arch (Junxd-03)", function() LoadScript("https://arch-http.vercel.app/files/projecthradmodv3") end)
 Section:NewButton("Voidness (V2 Soon)", "GuestlyTheGreatestGuest", function() LoadScript("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/Voidness-Mode-Made-By-Guestly-Vuivuiviu2-And-Voorpr0") end)
 local Section = Tab:NewSection("Improbable")
 Section:NewButton("Combined Mode", "???", function() LoadScript("https://pastebin.com/raw/g4nvj2EP") end)
@@ -101,23 +101,33 @@ local Section = Tab:NewSection("Unnamed")
 Section:NewButton("DOORS Script Pastebin - Esp, WalkSpeed, Skip LVL", "???", function() LoadScript("https://pastebin.com/raw/h8Gvq7k3") end)
 Section:NewButton("DOORS Script Pastebin – Auto Finish, No Jumpscares", "???", function() LoadScript("https://pastebin.com/raw/9QPGnLx6") end)
 local Tab = Window:NewTab("Entity")
-local Section = Tab:NewSection("Spawners")
+local Section = Tab:NewSection("Spawners (PABMAXICHAC isn't guaranteed to work)")
+Section:NewButton("Doors Entity Spawner V3", "Tunder8401", function() LoadScript("https://raw.githubusercontent.com/Tunder8401/Doors-Entity-Spawner-V3/raw/refs/heads/main/Spawner") end)
 Section:NewButton("350", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/350-entity/refs/heads/main/350") end)
 Section:NewButton("Black", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Black-smile/refs/heads/main/Black") end)
+Section:NewButton("Blink", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/blinkcrux") end)
 Section:NewButton("Bluyer", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Bluyer-entity/refs/heads/main/Bluyer") end)
+Section:NewButton("Cease", "", function() LoadScript("https://pastefy.app/ofutwkjb/raw") end)
 Section:NewButton("Chaotic", "J63633S", function() LoadScript("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Chaotic") end)
 Section:NewButton("Daze", "eoyoustme", function() LoadScript("https://raw.githubusercontent.com/eoyoustme/ohh/refs/heads/main/Daze11") end)
-Section:NewButton("Doors Entity Spawner V3", "Tunder8401", function() LoadScript("https://raw.githubusercontent.com/Tunder8401/Doors-Entity-Spawner-V3/raw/refs/heads/main/Spawner") end)
+Section:NewButton("Eyes", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/eyefix") end)
+Section:NewButton("Dimention Eyes", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/dimeyefix") end)
+Section:NewButton("Disturbance", "talales", function() LoadScript("https://raw.githubusercontent.com/talales/Nhankg.-/refs/heads/main/intro%20fragmented") end)
 Section:NewButton("Draft", "eoyoustme", function() LoadScript("https://raw.githubusercontent.com/eoyoustme/ohh/refs/heads/main/Draft1") end)
+Section:NewButton("Dread (run at door 0 and open door 1)", "talales", function() LoadScript("https://raw.githubusercontent.com/talales/Nhankg_/refs/heads/main/intro%20fragmented") end)
 Section:NewButton("Fluster", "talales", function() LoadScript("https://raw.githubusercontent.com/talales/Nhankg./refs/heads/main/Fluster") end)
 Section:NewButton("Hardcore A-60", "Idk-lol2", function() LoadScript("https://raw.githubusercontent.com/Idk-lol2/a-60aa/refs/heads/main/---%3D%3D%3D%3D%3D%3D%20a-60%20agresiv%20spawner%20%3D%3D%3D%3D%3D%3D---.txt") end)
 Section:NewButton("Him", "trungdepth-dot", function() LoadScript("https://raw.githubusercontent.com/trungdepth-dot/Him-entity-doors/refs/heads/main/Him") end)
+Section:NewButton("Hunger", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/HUNGERcrux") end)
 Section:NewButton("Hungered", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Hungerd/refs/heads/main/Entity") end)
 Section:NewButton("Munci", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Munci-entity/refs/heads/main/Munci-20") end)
+Section:NewButton("Shh", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/shhcrux") end)
 Section:NewButton("Shocker", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Shocker-entity/refs/heads/main/Shocker") end)
+Section:NewButton("Smiler", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/smilerfix") end)
 Section:NewButton("Surge", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Surge-entity/refs/heads/main/Surge") end)
 Section:NewButton("Torment (run at door 0 and open door 1)", "eoyoustme", function() LoadScript("https://raw.githubusercontent.com/eoyoustme/ohh/refs/heads/main/Torment12") end)
 Section:NewButton("Trauma", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Trauma-entity/refs/heads/main/Trauma") end)
+Section:NewButton("WH1TE", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/wh1t3_p2_5fix") end)
 
 Section:NewButton("Depth", "", function()
     local ok, err = pcall(function()
@@ -139,18 +149,57 @@ Section:NewButton("Depth", "", function()
     if not ok then warn("[Loadstring Error]", err) else print("[Loaded Successfully]") end
 end)
 
-local Tab = Window:NewTab("item")
+Section:NewButton("Giggle", "DripCapybara", function()
+getgenv().GIGGLE_SPAWN_CONFIG = {
+Damage = 6,
+AttackingTime = math.random(7, 10), -- The time giggle will be attacking for.
+FallSpeed = 3, -- Speed for when giggle spawns, can be mininum 2 and how high you want
+
+Stunnable = true, -- If set to true, Giggle will be stunnable with glowstick
+StunTime = 5, -- The time giggle will be stun for
+
+RagdollThrowForce = 50, -- The Ragdoll's Force when its thrown
+RagdollDissapears = true, -- If set to true the ragdoll will dissapear once giggle finishes attacking.
+
+RoomSpawning = {
+Enabled = true -- If set to false, giggle will spawn around the player.
+},
+
+PlayerSpawning = { -- This table will be used if Room Spawning is Disabled
+MinRadius = -20, -- The minimum distance giggle can spawn from the player.
+MaxRadius = 20. -- The maximum distance giggle can spawn from the player.
+},
+
+SpawningKey = { -- Key for Spawning
+Enabled = false, -- If enabled once the key is pressed, giggle will spawn.
+Key = "G" -- Key that is used for spawning giggle
+}
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DripCapybara/Test/refs/heads/main/Doors/GiggleSpawn.lua, true"))()
+end)
+
+local Tab = Window:NewTab("Item")
 local Section = Tab:NewSection("Spawners")
+Section:NewButton("Tool Giver", "Darli17", function() LoadScript("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Tools") end)
+Section:NewButton("RobHub X Item Giver", "Darli17", function() LoadScript("https://raw.githubusercontent.com/Darli17/DOORS-REBOUNCES/refs/heads/main/main-ig") end)
 Section:NewButton("Admin Slap", "GuestlyTheGreatestGuest", function() LoadScript("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Scripts/refs/heads/main/Admin-Slap-For-DOORS-made-by-Celestian-(Guestly)-on-Discord") end)
+Section:NewButton("Black Hole", "iimateiYT", function() LoadScript("https://raw.githubusercontent.com/iimateiYT/Scripts/main/Black%20Hole.lua") end)
 Section:NewButton("Golden Gummy Flashlight", "aadyian9000", function() LoadScript("https://raw.githubusercontent.com/aadyian9000/the-thing/main/GoldenGummyFlashlight.lua") end)
 Section:NewButton("Grenade", "", function() LoadScript("https://pastebin.com/raw/zeFBYYy9") end)
-Section:NewButton("Guiding Light Candle", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Guiding-light-candle/refs/heads/main/Candle") end)
+Section:NewButton("Guiding Candle", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Guiding-light-candle/refs/heads/main/Candle") end)
+Section:NewButton("Mischievous Crucifix", "Teilsthebfdifan", function() LoadScript("https://raw.githubusercontent.com/Teilsthebfdifan/Modhub-assets/refs/heads/main/MischievousV2Test.lua") end)
+Section:NewButton("Foundation Crucifix", "IdkMyNameLoll", function() LoadScript("https://raw.githubusercontent.com/IdkMyNameLoll/PublicScripts/refs/heads/main/crucifix_E_A_A") end)
+Section:NewButton("Flamethrower", "JohnyGamingLUA", function() LoadScript("https://raw.githubusercontent.com/JohnyGamingLUA/FlamethrowerDOORS/main/obfuscated.lua") end)
 Section:NewButton("Infinite Vitamins", "MrNeRD0", function() LoadScript("https://raw.githubusercontent.com/MrNeRD0/Doors-Hack/refs/heads/main/Inf_Vitamins.lua") end)
+Section:NewButton("Jeff's Tip Jar", "", function() LoadScript("https://pastebin.com/raw/Hsuiugnr") end)
+Section:NewButton("Magic Book", "skkenrgjt", function() LoadScript("https://raw.githubusercontent.com/skkenrgjt/HAHAHAH/refs/heads/main/MagicRunner") end)
 Section:NewButton("Mischievous Crucifix", "Teilsthebfdifan", function() LoadScript("https://raw.githubusercontent.com/Teilsthebfdifan/Modhub-assets/refs/heads/main/MischievousV2Test.lua") end)
 Section:NewButton("Resizer", "", function() LoadScript("https://pastefy.app/dy85jtB6/raw") end)
 Section:NewButton("Resizer Remake", "IdkMyNameLoll", function() LoadScript("https://gist.githubusercontent.com/IdkMyNameLoll/f0178af2301ca90c09895f10f3e7bd4b/raw/46899ccc3626f3485d85f990012f7ef37ae52e5e/resizerDoorsRemake") end)
-Section:NewButton("RobHub X Item Giver", "Darli17", function() LoadScript("https://raw.githubusercontent.com/Darli17/DOORS-REBOUNCES/refs/heads/main/main-ig") end)
-Section:NewButton("Tool Giver", "Darli17", function() LoadScript("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Tools") end)
+Section:NewButton("Scanner", "notpoiu", function() LoadScript("https://raw.githubusercontent.com/notpoiu/Scripts/main/Scanner.lua") end)
+Section:NewButton("Screech Plush", "", function() LoadScript("https://pastebin.com/raw/CRYiKPZX") end)
+Section:NewButton("Seek Gun", "notpoiu", function() LoadScript("https://raw.githubusercontent.com/notpoiu/Scripts/main/seekgun.lua") end)
 
 local Tab = Window:NewTab("HUD/UI")
 local Section = Tab:NewSection("Shaders")
@@ -175,11 +224,11 @@ Section:NewButton("The Lost Mines", "", function()
     if not ok then warn("[Loadstring Error]", err) else print("[Loaded Successfully]") end
 end)
 
-local Section = Tab:NewSection("Other")
+local Section = Tab:NewSection("Others")
 Section:NewButton("Speedrun Timer", "Iliankytb", function() LoadScript("https://raw.githubusercontent.com/Iliankytb/Iliankytb/main/SpeedrunTimer") end)
 Section:NewButton("Sprint V5", "Sc-Rhyan57", function() LoadScript("https://raw.githubusercontent.com/Sc-Rhyan57/MsProject/refs/heads/main/projects/DOORS-SPRINT.lua") end)
 local Section = Tab:NewSection("Morphs")
-Section:NewButton("Speedrun Timer", "Iliankytb", function() LoadScript("https://raw.githubusercontent.com/IdkMyNameLoll/PublicScripts/refs/heads/main/c00lkiddSeek") end)
+Section:NewButton("C001Kid Seek Chase", "IdkMyNameLoll", function() LoadScript("https://raw.githubusercontent.com/IdkMyNameLoll/PublicScripts/refs/heads/main/c00lkiddSeek") end)
 local Tab = Window:NewTab("Credits")
 Tab:NewSection("Everyone on the Hub")
 Tab:NewSection("Originaly Made by @Greed_gamingMobile & @Gummy_playz-h2h")
