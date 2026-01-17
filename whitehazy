@@ -1,0 +1,158 @@
+-- ===== SERVICES =====
+local Players = game:GetService("Players")
+local Lighting = game:GetService("Lighting")
+local TweenService = game:GetService("TweenService")
+local UIS = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local humanoid = char:WaitForChild("Humanoid")
+
+-- =====================================================
+-- ================= WHITE HAZE MODE ===================
+-- =====================================================
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "WhiteHazeGUI"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+local label = Instance.new("TextLabel")
+label.Size = UDim2.fromScale(1, 0.12)
+label.Position = UDim2.fromScale(0, 0.85)
+label.BackgroundTransparency = 1
+label.Text = "White Haze Mode"
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextStrokeTransparency = 0.2
+label.TextTransparency = 1
+label.Font = Enum.Font.GothamBold
+label.TextScaled = true
+label.Parent = gui
+
+local function ShowWhiteHazeTitle()
+	local fadeIn = TweenService:Create(label, TweenInfo.new(1), {
+		TextTransparency = 0
+	})
+	fadeIn:Play()
+
+	task.delay(3, function()
+		local fadeOut = TweenService:Create(label, TweenInfo.new(1), {
+			TextTransparency = 1
+		})
+		fadeOut:Play()
+	end)
+end
+
+local FOG_ON = true
+
+local function ApplyFog()
+	Lighting.FogStart = 15
+	Lighting.FogEnd = 90
+	Lighting.FogColor = Color3.fromRGB(235, 235, 235)
+end
+
+local function EnableWhiteFog()
+	FOG_ON = true
+	local tween = TweenService:Create(
+		Lighting,
+		TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+		{
+			FogStart = 15,
+			FogEnd = 90,
+			FogColor = Color3.fromRGB(235, 235, 235)
+		}
+	)
+	tween:Play()
+	ShowWhiteHazeTitle()
+end
+
+task.spawn(function()
+	while true do
+		task.wait(0.5)
+		if FOG_ON then
+			ApplyFog()
+		end
+	end
+end)
+
+task.wait(3)
+EnableWhiteFog()
+
+-- =====================================================
+-- ===================== SPRINT ========================
+-- =====================================================
+
+local normalSpeed = 16
+local sprintSpeed = 26
+local maxStamina = 100
+local stamina = maxStamina
+local drainRate = 30
+local regenRate = 20
+local sprinting = false
+local exhausted = false
+
+local sprintGui = Instance.new("ScreenGui")
+sprintGui.Name = "SprintGUI"
+sprintGui.Parent = player.PlayerGui
+
+local barBG = Instance.new("Frame")
+barBG.Parent = sprintGui
+barBG.Size = UDim2.new(0, 200, 0, 16)
+barBG.Position = UDim2.new(0.02, 0, 0.92, 0)
+barBG.BackgroundColor3 = Color3.fromRGB(40,40,40)
+barBG.BorderSizePixel = 0
+barBG.BackgroundTransparency = 0.2
+
+local corner = Instance.new("UICorner", barBG)
+corner.CornerRadius = UDim.new(0, 6)
+
+local bar = Instance.new("Frame")
+bar.Parent = barBG
+bar.Size = UDim2.new(1, 0, 1, 0)
+bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bar.BorderSizePixel = 0
+
+local corner2 = Instance.new("UICorner", bar)
+corner2.CornerRadius = UDim.new(0, 6)
+
+UIS.InputBegan:Connect(function(input, gpe)
+	if gpe then return end
+	if input.KeyCode == Enum.KeyCode.LeftShift and not exhausted then
+		sprinting = true
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.LeftShift then
+		sprinting = false
+	end
+end)
+
+RunService.RenderStepped:Connect(function(dt)
+	if sprinting and stamina > 0 then
+		humanoid.WalkSpeed = sprintSpeed
+		stamina -= drainRate * dt
+
+		-- Tự chạy về phía trước theo hướng camera
+		if char and char:FindFirstChild("HumanoidRootPart") then
+			local cam = workspace.CurrentCamera
+			humanoid:Move(cam.CFrame.LookVector, true)
+		end
+	else
+		humanoid.WalkSpeed = normalSpeed
+		if stamina < maxStamina then
+			stamina += regenRate * dt
+		end
+	end
+
+	if stamina <= 0 then
+		stamina = 0
+		exhausted = true
+		sprinting = false
+	elseif stamina >= maxStamina * 0.25 then
+		exhausted = false
+	end
+
+	bar.Size = UDim2.new(math.clamp(stamina / maxStamina, 0, 1), 0, 1, 0)
+end)
