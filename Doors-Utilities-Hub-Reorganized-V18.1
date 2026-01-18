@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DenDenZZZ/Kavo-UI-Library/main/Kavo.lua", true))()
-local Window = Library.CreateLib("Doors Utilities Hub Reorganized V18", "Ocean")
+local Window = Library.CreateLib("Doors Utilities Hub Reorganized V18.1", "Ocean")
 local function LoadScript(url)
 local ok, err = pcall(function()
 loadstring(game:HttpGet(url, true))()
@@ -22,6 +22,7 @@ Section:NewButton("Scripts Pack", "xvc200", function() LoadScript("https://paste
 local Section = Tab:NewSection("Inspiration")
 Section:NewButton("@Gummy_playz-h2h/#idkman06483's Modes Hub V17", "@Rip_Survival", function() LoadScript("https://pastebin.com/raw/1BWXC3Zy") end)
 Section:NewButton("GuestlyTheGreatestGuest's Old Hub That Died", "TheDarkMan1334", function() LoadScript("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Modes/refs/heads/main/My%20old%20hub%20that%20died") end)
+Section:NewButton("Admin Slap Item", "GuestlyTheGreatestGuest", function() LoadScript("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Scripts/refs/heads/main/Admin-Slap-For-DOORS-made-by-Celestian-(Guestly)-on-Discord") end)
 local Section = Tab:NewSection("Normal")
 Section:NewButton("Anarchy", "Tunder8401", function() LoadScript("https://raw.githubusercontent.com/Tunder8401/1mode-by-Tunder8401/refs/heads/main/AnarchyMode.lua") end)
 Section:NewButton("Broken", "TheDarkMan1334", function() LoadScript("https://raw.githubusercontent.com/TheDarkMan1334/Broken-mode/refs/heads/main/BrokenMode%20Version%201.8%20Fix") end)
@@ -78,6 +79,7 @@ Section:NewButton("BlackKing X BobHub", "", function() LoadScript("https://paste
 Section:NewButton("DarkCheatClient", "VaniaPerets", function() LoadScript("https://raw.githubusercontent.com/VaniaPerets/FolderGui-FolderHub/main/loader.lua") end)
 Section:NewButton("Darkrai X", "GamingScripter", function() LoadScript("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Evade") end)
 Section:NewButton("Devils", "hassanxzayn-lua", function() LoadScript("https://raw.githubusercontent.com/hassanxzayn-lua/doors/main/devilshubgui") end)
+Section:NewButton("DP", "COOLXPLO", function() LoadScript("https://raw.githubusercontent.com/COOLXPLO/DP-HUB-coolxplo/refs/heads/main/Doors.lua") end)
 Section:NewButton("FFJ", "FFJ1", function() LoadScript("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua") end)
 Section:NewButton("Hardcore ESP", "Qiwikox12", function() LoadScript("https://raw.githubusercontent.com/Qiwikox12/stubrawl/refs/heads/main/DoorsHardcoreESP.txt") end)
 Section:NewButton("Kitty Cats", "CatEnddroid", function() LoadScript("https://raw.githubusercontent.com/CatEnddroid/Kitty-Cats-Doors-Beta/refs/heads/main/hub.lua") end)
@@ -93,6 +95,7 @@ Section:NewButton("Scripts Mode ESP", "Munciseekawa", function() LoadScript("htt
 Section:NewButton("Sexsation", "", function() LoadScript("https://api.luarmor.net/files/v3/loaders/730854e5b6499ee91deb1080e8e12ae3.lua") end)
 Section:NewButton("T1", "(Repository from AmadeyHunter)", function() LoadScript("https://raw.githubusercontent.com/AmadeyHunter/BackUp/refs/heads/main/T1") end)
 Section:NewButton("UtilitiesGUI", "plamen6789", function() LoadScript("https://raw.githubusercontent.com/plamen6789/UtilitiesHub/main/UtilitiesGUI") end)
+Section:NewButton("Velocity X", "DasVelocity", function() LoadScript("https://raw.githubusercontent.com/DasVelocity/VelocityX/refs/heads/main/VelocityX.lua") end)
 Section:NewButton("Vynixius", "vynixius.win", function() LoadScript("https://vynixius.win/loader.luau") end)
 local Section = Tab:NewSection("Unnamed")
 Section:NewButton("DOORS Script Pastebin - Esp, WalkSpeed, Skip LVL", "???", function() LoadScript("https://pastebin.com/raw/h8Gvq7k3") end)
@@ -125,62 +128,52 @@ Section:NewButton("Surge", "Junbbinopro", function() LoadScript("https://raw.git
 Section:NewButton("Torment (run at door 0 and open door 1)", "eoyoustme", function() LoadScript("https://raw.githubusercontent.com/eoyoustme/ohh/refs/heads/main/Torment12") end)
 Section:NewButton("Trauma", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Trauma-entity/refs/heads/main/Trauma") end)
 Section:NewButton("WH1TE", "PABMAXICHAC", function() LoadScript("https://raw.githubusercontent.com/PABMAXICHAC/doors-monsters-scripts/refs/heads/main/wh1t3_p2_5fix") end)
-
 Section:NewButton("Depth", "", function()
-    local ok, err = pcall(function()
-        local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua", true))()
-        local entity = spawner.Create({
-            Entity = { Name = "depth", Asset = "https://github.com/sofianmohamedovich-cmyk/tes/blob/main/depth.rbxm?raw=true", HeightOffset = 0 },
-            Lights = { Flicker = { Enabled = true, Duration = 5 }, Shatter = true, Repair = false },
-            Earthquake = { Enabled = true },
-            CameraShake = { Enabled = true, Range = 100, Values = {1.5, 20, 0.1, 1} },
-            Movement = { Speed = 100, Delay = 2, Reversed = false },
-            Rebounding = { Enabled = true, Type = "Ambush", Min = 1, Max = 1, Delay = 2 },
-            Damage = { Enabled = true, Range = 40, Amount = 50 },
-            Crucifixion = { Enabled = true, Range = 40, Resist = false, Break = true },
-            Death = { Type = "Guiding", Hints = {"you've died to depth..", "he usually just rebounds", "Go", "Here"}, Cause = "" }
-        })
-        entity:SetCallback("OnSpawned", function() print("Entity has spawned") end)
-        entity:Run()
-    end)
-    if not ok then warn("[Loadstring Error]", err) else print("[Loaded Successfully]") end
+local ok, err = pcall(function()
+local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua", true))()
+local entity = spawner.Create({
+Entity = { Name = "depth", Asset = "https://github.com/sofianmohamedovich-cmyk/tes/blob/main/depth.rbxm?raw=true", HeightOffset = 0 },
+Lights = { Flicker = { Enabled = true, Duration = 5 }, Shatter = true, Repair = false },
+Earthquake = { Enabled = true },
+CameraShake = { Enabled = true, Range = 100, Values = {1.5, 20, 0.1, 1} },
+Movement = { Speed = 100, Delay = 2, Reversed = false },
+Rebounding = { Enabled = true, Type = "Ambush", Min = 1, Max = 1, Delay = 2 },
+Damage = { Enabled = true, Range = 40, Amount = 50 },
+Crucifixion = { Enabled = true, Range = 40, Resist = false, Break = true },
+Death = { Type = "Guiding", Hints = {"you've died to depth..", "he usually just rebounds", "Go", "Here"}, Cause = "" }
+})
+entity:SetCallback("OnSpawned", function() print("Entity has spawned") end)
+entity:Run()
 end)
-
+if not ok then warn("[Loadstring Error]", err) else print("[Loaded Successfully]") end
+end)
 Section:NewButton("Giggle", "DripCapybara", function()
 getgenv().GIGGLE_SPAWN_CONFIG = {
 Damage = 6,
 AttackingTime = math.random(7, 10), -- The time giggle will be attacking for.
 FallSpeed = 3, -- Speed for when giggle spawns, can be mininum 2 and how high you want
-
 Stunnable = true, -- If set to true, Giggle will be stunnable with glowstick
 StunTime = 5, -- The time giggle will be stun for
-
 RagdollThrowForce = 50, -- The Ragdoll's Force when its thrown
 RagdollDissapears = true, -- If set to true the ragdoll will dissapear once giggle finishes attacking.
-
 RoomSpawning = {
 Enabled = true -- If set to false, giggle will spawn around the player.
 },
-
 PlayerSpawning = { -- This table will be used if Room Spawning is Disabled
 MinRadius = -20, -- The minimum distance giggle can spawn from the player.
 MaxRadius = 20. -- The maximum distance giggle can spawn from the player.
 },
-
 SpawningKey = { -- Key for Spawning
 Enabled = false, -- If enabled once the key is pressed, giggle will spawn.
 Key = "G" -- Key that is used for spawning giggle
 }
 }
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/DripCapybara/Test/refs/heads/main/Doors/GiggleSpawn.lua, true"))()
 end)
-
 local Tab = Window:NewTab("Item")
 local Section = Tab:NewSection("Spawners")
 Section:NewButton("Tool Giver", "Darli17", function() LoadScript("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Tools") end)
 Section:NewButton("RobHub X Item Giver", "Darli17", function() LoadScript("https://raw.githubusercontent.com/Darli17/DOORS-REBOUNCES/refs/heads/main/main-ig") end)
-Section:NewButton("Admin Slap", "GuestlyTheGreatestGuest", function() LoadScript("https://raw.githubusercontent.com/GuestlyTheGreatestGuest/Scripts/refs/heads/main/Admin-Slap-For-DOORS-made-by-Celestian-(Guestly)-on-Discord") end)
 Section:NewButton("Black Hole", "iimateiYT", function() LoadScript("https://raw.githubusercontent.com/iimateiYT/Scripts/main/Black%20Hole.lua") end)
 Section:NewButton("Golden Gummy Flashlight", "aadyian9000", function() LoadScript("https://raw.githubusercontent.com/aadyian9000/the-thing/main/GoldenGummyFlashlight.lua") end)
 Section:NewButton("Grenade", "", function() LoadScript("https://pastebin.com/raw/zeFBYYy9") end)
@@ -197,7 +190,6 @@ Section:NewButton("Resizer Remake", "IdkMyNameLoll", function() LoadScript("http
 Section:NewButton("Scanner", "notpoiu", function() LoadScript("https://raw.githubusercontent.com/notpoiu/Scripts/main/Scanner.lua") end)
 Section:NewButton("Screech Plush", "", function() LoadScript("https://pastebin.com/raw/CRYiKPZX") end)
 Section:NewButton("Seek Gun", "notpoiu", function() LoadScript("https://raw.githubusercontent.com/notpoiu/Scripts/main/seekgun.lua") end)
-
 local Tab = Window:NewTab("HUD/UI")
 local Section = Tab:NewSection("Shaders")
 Section:NewButton("RTX", "Flybobbb", function() LoadScript("https://raw.githubusercontent.com/Flybobbb/robloxscripts/main/rtx.lua") end)
@@ -206,21 +198,19 @@ local Section = Tab:NewSection("Floors")
 Section:NewButton("Demon", "eoyoustme", function() LoadScript("https://raw.githubusercontent.com/eoyoustme/Monoxide/refs/heads/main/DEMON") end)
 Section:NewButton("Floor 2", "Junxd-03", function() LoadScript("https://raw.githubusercontent.com/Junxd-03/Floor-2/refs/heads/main/New") end)
 Section:NewButton("Fog", "Junbbinopro", function() LoadScript("https://raw.githubusercontent.com/Junbbinopro/Fog-doors/refs/heads/main/Fogg") end)
-
 Section:NewButton("The Lost Mines", "", function()
-    local ok, err = pcall(function()
-        -- [Original function logic for stoneifying and entity spawning]
-        local Workspace=game:GetService("Workspace")
-        local Lighting=game:GetService("Lighting")
-        if Lighting:FindFirstChild("Atmosphere")then Lighting.Atmosphere:Destroy()end
-        Lighting.FogColor=Color3.new(0.133333,0.14902,0.239216)
-        Lighting.FogStart=0
-        Lighting.FogEnd=100
-        print("The Lost Mines environment applied.")
-    end)
-    if not ok then warn("[Loadstring Error]", err) else print("[Loaded Successfully]") end
+local ok, err = pcall(function()
+--[Original function logic for stoneifying and entity spawning]
+local Workspace=game:GetService("Workspace")
+local Lighting=game:GetService("Lighting")
+if Lighting:FindFirstChild("Atmosphere")then Lighting.Atmosphere:Destroy()end
+Lighting.FogColor=Color3.new(0.133333,0.14902,0.239216)
+Lighting.FogStart=0
+Lighting.FogEnd=100
+print("The Lost Mines environment applied.")
 end)
-
+if not ok then warn("[Loadstring Error]", err) else print("[Loaded Successfully]") end
+end)
 local Section = Tab:NewSection("Others")
 Section:NewButton("Speedrun Timer", "Iliankytb", function() LoadScript("https://raw.githubusercontent.com/Iliankytb/Iliankytb/main/SpeedrunTimer") end)
 Section:NewButton("Sprint V5", "Sc-Rhyan57", function() LoadScript("https://raw.githubusercontent.com/Sc-Rhyan57/MsProject/refs/heads/main/projects/DOORS-SPRINT.lua") end)
