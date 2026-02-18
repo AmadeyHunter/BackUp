@@ -1,0 +1,15 @@
+local scripts = {
+"https://raw.githubusercontent.com/daiayday/HardcoreRemastered/refs/heads/main/obf_L6zO2N0sG5ehDHd56JBc5z70TZ2piVOvIqsgE88741HXGrwv7E4qd6c8axu8z4oh.lua.txt",
+"https://raw.githubusercontent.com/talales/Nhankg/refs/heads/main/fragmented%20v5",
+"https://raw.githubusercontent.com/chubeteliet-cpu/OVERDOORS-rework-ver/refs/heads/main/OVERDOORS-REWORK-chubeteliet-mahoa"
+}
+for _, url in ipairs(scripts) do
+task.spawn(function()
+local success, result = pcall(function()
+return loadstring(game:HttpGet(url, true))()
+end)
+if not success then
+warn("Failed to load script from: " .. url .. "\nError: " .. tostring(result))
+end
+end)
+end
