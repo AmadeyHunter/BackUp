@@ -1,7 +1,8 @@
 local scripts = {
 "https://raw.githubusercontent.com/daiayday/HardcoreRemastered/refs/heads/main/obf_L6zO2N0sG5ehDHd56JBc5z70TZ2piVOvIqsgE88741HXGrwv7E4qd6c8axu8z4oh.lua.txt",
 "https://raw.githubusercontent.com/talales/Nhankg/refs/heads/main/fragmented%20v5",
-"https://raw.githubusercontent.com/chubeteliet-cpu/OVERDOORS-rework-ver/refs/heads/main/OVERDOORS-REWORK-chubeteliet-mahoa"
+"https://raw.githubusercontent.com/thelostw3r/Mods/main/HardcoreMode.lua",
+"https://raw.githubusercontent.com/chubeteliet-cpu/OVERDOORS-rework-ver/refs/heads/main/OVERDOORS%20entity%20finale%20upd"
 }
 for _, url in ipairs(scripts) do
 task.spawn(function()
