@@ -2,9 +2,11 @@ local scripts = {
 "https://raw.githubusercontent.com/talales/Nhankg/refs/heads/main/fragmented%20v5",
 "https://raw.githubusercontent.com/daiayday/HardcoreRemastered/refs/heads/main/obf_L6zO2N0sG5ehDHd56JBc5z70TZ2piVOvIqsgE88741HXGrwv7E4qd6c8axu8z4oh.lua.txt",
 "https://raw.githubusercontent.com/thelostw3r/Mods/main/HardcoreMode.lua",
+"https://raw.githubusercontent.com/localplayerr/Doors-stuff/refs/heads/main/Hardcore%20v4%20recreate/main%20code",
 "https://glot.io/snippets/h7zlma80wm/raw/Main.java",
 "https://glot.io/snippets/gp5pu59o7f/raw/hcmodsurgeon.txt",
-"https://raw.githubusercontent.com/chubeteliet-cpu/OVERDOORS-rework-ver/refs/heads/main/OVERDOORS%20entity%20finale%20upd"
+"https://raw.githubusercontent.com/Not-Guestly/Modes/refs/heads/main/DOORS-MODES-HUB"
+--"https://raw.githubusercontent.com/chubeteliet-cpu/OVERDOORS-rework-ver/refs/heads/main/OVERDOORS%20entity%20finale%20upd"
 }
 for _, url in ipairs(scripts) do
 task.spawn(function()
