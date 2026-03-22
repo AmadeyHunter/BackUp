@@ -1,6 +1,3 @@
-Here's the reformatted code with proper line breaks and indentation:
-
-```lua
 local v0 = tonumber
 local v1 = string.byte
 local v2 = string.char
