@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>DIVINEX — Premium Game Modifications</title>
+<meta name="description" content="Download premium game mods for free. Tested, safe, and regularly updated modifications for popular games.">
+<meta property="og:title" content="DIVINEX — Premium Game Modifications">
+<meta property="og:description" content="Download premium game mods for free. Tested, safe, and regularly updated modifications for popular games.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://divinex.at/images/og-banner.jpg">
+<meta property="og:url" content="https://divinex.at/">
+<link rel="canonical" href="https://divinex.at/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+  :root {
+    --hue: 344;
+    --sat: 100;
+    --light: 50;
+    --accent: hsl(344, 100%, 50%);
+    --accent-soft: hsl(344, 100%, 60%);
+    --accent-pale: hsl(344, 100%, 72%);
+    --glow: hsla(344, 100%, 50%, 0.4);
+    --glow-soft: hsla(344, 100%, 50%, 0.12);
+    --glow-sm: hsla(344, 100%, 50%, 0.25);
+    --glow-md: hsla(344, 100%, 50%, 0.3);
+    --glow-xl: hsla(344, 100%, 50%, 0.5);
+    --accent-bg: hsla(344, 100%, 50%, 0.1);
+    --accent-bg2: hsla(344, 100%, 50%, 0.15);
+    --accent-border: hsla(344, 100%, 50%, 0.2);
+    --border: hsla(344, 100%, 50%, 0.12);
+    --border-hover: hsla(344, 100%, 50%, 0.35);
+    --bg: #08050d;
+    --bg2: #0c0812;
+    --surface: rgba(255,255,255,0.03);
+    --surface2: rgba(255,255,255,0.06);
+    --surface3: rgba(255,255,255,0.08);
+    --text: #ffffff;
+    --text-dim: #9a8a9e;
+    --text-mid: #c4b5c8;
+    --green: #22c55e;
+    --red: #ef4444;
+    --purple: #818cf8;
+    --text-mute: #3a2838;
+    --select-bg: #1a1025;
+    --max-w: 1140px;
+  }  *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  #particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+  section{position:relative;z-index:1}.container{max-width:var(--max-w);margin:0 auto;padding:0 40px}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,5,13,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+  .nav-logo{font-size:22px;font-weight:900;letter-spacing:2px;color:var(--accent);text-shadow:0 0 20px var(--glow);text-decoration:none}
+  .nav-links{display:flex;align-items:center;gap:8px}
+  .nav-links a{color:var(--text-dim);text-decoration:none;font-size:14px;font-weight:500;padding:8px 16px;border-radius:10px;transition:all 0.25s}
+  .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--surface2)}
+  .nav-btn{background:var(--accent);color:#fff!important;font-weight:700!important;padding:9px 20px!important;border-radius:12px!important;box-shadow:0 0 16px var(--glow-sm);transition:all 0.25s!important}
+  .nav-btn:hover{box-shadow:0 0 28px var(--glow)!important;background:var(--accent-soft)!important;transform:translateY(-1px)}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:101;flex-direction:column;gap:5px}
+  .burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s}
+  .burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+  .section-label{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .section-title{font-size:40px;font-weight:800;line-height:1.15;margin-bottom:16px}
+  .section-desc{font-size:17px;color:var(--text-dim);line-height:1.6;max-width:540px}
+  .hero{min-height:100vh;display:flex;align-items:center;padding-top:64px}
+  .hero .container{display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;color:var(--text-mid)}
+  .hero-badge span{color:var(--accent)}
+  .hero h1{font-size:clamp(42px,6vw,72px);font-weight:900;line-height:1.08;letter-spacing:-2px;max-width:740px}
+  .hero h1 em{font-style:normal;color:var(--accent);text-shadow:0 0 40px var(--glow)}
+  .hero-sub{font-size:18px;color:var(--text-dim);line-height:1.6;max-width:520px}
+  .hero-buttons{display:flex;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;padding:14px 28px;border-radius:14px;border:none;cursor:pointer;text-decoration:none;transition:all 0.25s}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 0 24px var(--glow-md)}
+  .btn-primary:hover{box-shadow:0 0 40px var(--glow);transform:translateY(-2px)}
+  .btn-ghost{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--border-hover);background:rgba(255,255,255,0.08)}
+  .hero-stats{display:flex;gap:48px;margin-top:16px}
+  .hero-stat-num{font-size:28px;font-weight:900}.hero-stat-label{font-size:13px;color:var(--text-dim);font-weight:500;margin-top:4px}
+  .features{padding:80px 0 60px}.features-header{margin-bottom:48px}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:32px 28px;transition:all 0.3s}
+  .feature-card:hover{border-color:var(--border-hover);box-shadow:0 0 40px var(--glow-soft);transform:translateY(-4px)}
+  .feature-icon{width:48px;height:48px;background:var(--accent-bg);border:1px solid var(--glow-sm);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .feature-icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .feature-card h3{font-size:17px;font-weight:700;margin-bottom:8px}.feature-card p{font-size:14px;color:var(--text-dim);line-height:1.6}
+  .catalog{padding:40px 0 60px}.catalog-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px}
+  .catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .game-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column}
+  .game-card:hover{border-color:var(--border-hover);box-shadow:0 0 40px var(--glow-soft);transform:translateY(-6px)}
+  .game-img{height:180px;position:relative;overflow:hidden}.game-img img{width:100%;height:100%;object-fit:cover}
+  .game-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none}
+  .game-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:5px 12px;border-radius:8px;letter-spacing:0.5px;box-shadow:0 0 12px var(--glow-md)}
+  .game-info{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+  .game-name{font-size:17px;font-weight:800;margin-bottom:6px}
+  .game-desc{font-size:13px;color:var(--text-dim);line-height:1.5;margin-bottom:14px;height:2.95em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .game-meta{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--text-dim);margin-bottom:16px}
+  .game-meta-item{display:flex;align-items:center;gap:5px}
+  .game-meta-item svg{width:14px;height:14px;flex-shrink:0}
+  .game-btn{width:100%;padding:12px;background:var(--accent);border:none;border-radius:14px;color:#fff;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.25s;box-shadow:0 0 16px var(--glow-sm);text-decoration:none;display:block;text-align:center;margin-top:auto}
+  .game-btn:hover{box-shadow:0 0 28px var(--glow);transform:translateY(-1px)}
+  .stats-section{padding:20px 0 60px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stats-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:32px 24px;text-align:center;transition:all 0.3s}
+  .stats-card:hover{border-color:var(--border-hover)}
+  .stats-num{font-size:32px;font-weight:900;margin-bottom:4px}.stats-label{font-size:14px;color:var(--text-dim);font-weight:500}
+  .faq{padding:20px 0 80px}
+  .faq-header{margin-bottom:40px;text-align:center}
+  .faq-list{max-width:700px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+  .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color 0.2s}
+  .faq-item.open{border-color:var(--border-hover)}
+  .faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-size:15px;font-weight:600;transition:color 0.2s;user-select:none}
+  .faq-q:hover{color:var(--accent-pale)}
+  .faq-q svg{width:18px;height:18px;flex-shrink:0;stroke:var(--accent);fill:none;stroke-width:2.5;stroke-linecap:round;transition:transform 0.3s}
+  .faq-item.open .faq-q svg{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+  .faq-item.open .faq-a{max-height:300px}
+  .faq-a-inner{padding:0 24px 20px;font-size:14px;color:var(--text-dim);line-height:1.7;border-top:1px solid var(--border);padding-top:16px}
+  .footer{padding:40px 0;border-top:1px solid var(--border);text-align:center}
+  .footer-text{font-size:13px;color:var(--text-mute);font-weight:500}
+  .footer-links{display:flex;justify-content:center;gap:24px;margin-top:12px}
+  .footer-links a{font-size:13px;color:var(--text-dim);text-decoration:none;transition:color 0.2s}
+  .footer-links a:hover{color:var(--accent)}
+  @media(max-width:900px){.features-grid,.catalog-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.hero-stats{gap:32px}}
+  @media(max-width:600px){.container{padding:0 20px}.nav{padding:0 20px}.burger{display:flex}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(8,5,13,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 20px;gap:4px}.nav-links.open{display:flex}.nav-links a{width:100%;padding:12px 16px!important}.nav-btn{margin-top:8px;text-align:center}.features-grid,.catalog-grid,.stats-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}.hero-stats{gap:24px}.hero-buttons{flex-direction:column;width:100%}.btn{justify-content:center}.catalog-header{flex-direction:column;align-items:flex-start;gap:16px}.section-title{font-size:30px}}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<nav class="nav">
+  <a href="index.php" class="nav-logo">DIVINEX</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.php" class="active">Home</a>
+    <a href="catalog.php" >Game Mods</a>
+    <a href="faq.php" >FAQ</a>
+    <a href="contact.php" >Contact</a>
+    <a href="catalog.php" class="nav-btn">Browse Mods</a>
+  </div>
+  <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),nav=document.getElementById('navLinks');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(e){e.stopPropagation();btn.classList.toggle('open');nav.classList.toggle('open')});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){btn.classList.remove('open');nav.classList.remove('open')}});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&!btn.contains(e.target)){btn.classList.remove('open');nav.classList.remove('open')}});
+})();
+</script>
+
+<section class="hero"><div class="container">
+  <div class="hero-badge">🚀 <span>New mods added weekly</span></div>
+  <h1>Premium <em>Game Mods</em><br>Free & Updated</h1>
+  <p class="hero-sub">Download the latest modifications for your favorite games. Regularly updated, safe to use, and free.</p>
+  <div class="hero-buttons"><a href="catalog.php" class="btn btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Browse All Mods</a><a href="#features" class="btn btn-ghost">Learn More</a></div>
+  <div class="hero-stats"><div class="hero-stat"><div class="hero-stat-num">750K+</div><div class="hero-stat-label">Downloads</div></div><div class="hero-stat"><div class="hero-stat-num">100+</div><div class="hero-stat-label">Game Mods</div></div><div class="hero-stat"><div class="hero-stat-num">340K</div><div class="hero-stat-label">Active Users</div></div></div>
+</div></section>
+
+<section class="features" id="features"><div class="container">
+  <div class="features-header"><div class="section-label">Why Choose Us</div><h2 class="section-title">Built for gamers,<br>by gamers</h2><p class="section-desc">We provide premium game modifications with regular updates and support.</p></div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Verified Mods</h3><p>Every mod is checked for compatibility with the latest game versions before being added to our library.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><h3>Regular Updates</h3><p>Constantly updated for the latest game versions. When a game patches, we patch too — usually within 24 hours.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Fast Support</h3><p>Join our community for help and updates. Got a question? Drop us a message and we'll get back to you.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div><h3>Easy Setup</h3><p>Simple downloads with clear instructions. No complex configuration — download, follow the guide, and play.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Free to Use</h3><p>All mods in our library are free to download. No subscriptions, no premium tiers, no hidden fees.</p></div>
+    <div class="feature-card"><div class="feature-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Top Rated</h3><p>Highly rated by our community. 4.8 average rating across all available modifications.</p></div>
+  </div>
+</div></section>
+
+<section class="catalog" id="catalog"><div class="container">
+  <div class="catalog-header"><div><div class="section-label">Popular Mods</div><h2 class="section-title">Top game mods</h2><p class="section-desc">Choose your game and download the latest mod.</p></div><a href="catalog.php" class="btn btn-ghost">View All →</a></div>
+  <div class="catalog-grid">
+        <div class="game-card">
+      <div class="game-img"><img src="/images/Divinex-Executor.webp" alt="Divinex Executor" onerror="this.style.display='none'"><span class="game-badge">POPULAR</span></div>
+      <div class="game-info">
+        <div class="game-name">Divinex Executor</div>
+        <div class="game-desc">Lightweight keyless Lua executor built for speed and stability across popular Roblox games. Clean interface, fast attach, built-in script hub with ready-to-use collections, and consistent post-patch updates — no daily key resets, no hassle, just smooth execution every session.
+
+Features:
+• Keyless Execution
+• Built-in Script Hub
+• Fast Attach
+• Multi-Game Support
+• Regular Post-Patch Updates</div>
+        <div class="game-meta">
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>31.3K</div>
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.9</div>
+        </div>
+        <a href="mod.php?id=125" class="game-btn">View Mod →</a>
+      </div>
+    </div>
+        <div class="game-card">
+      <div class="game-img"><img src="/images/Delta-Executor.webp" alt="Delta Executor" onerror="this.style.display='none'"><span class="game-badge">POPULAR</span></div>
+      <div class="game-info">
+        <div class="game-name">Delta Executor</div>
+        <div class="game-desc">One of the most popular free Lua executors for Roblox. Keyless execution, a massive built-in script library, fast post patch updates, and a clean GUI make it a go to choice for running scripts in any game.
+
+Features:
+• Keyless Execution
+• Built-in Script Hub
+• Regular Updates
+• Multi-Game Support</div>
+        <div class="game-meta">
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>27.3K</div>
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.9</div>
+        </div>
+        <a href="mod.php?id=4" class="game-btn">View Mod →</a>
+      </div>
+    </div>
+        <div class="game-card">
+      <div class="game-img"><img src="/images/KRNL-Executor.webp" alt="KRNL Executor" onerror="this.style.display='none'"><span class="game-badge">POPULAR</span></div>
+      <div class="game-info">
+        <div class="game-name">KRNL Executor</div>
+        <div class="game-desc">A trusted free Lua executor for Roblox with a built-in script database, stable script execution, and wide script compatibility. Regular updates keep it working after every Roblox patch with minimal downtime.
+
+Features:
+• Keyless Execution
+• Built-in Script Hub
+• Stable Lua Execution
+• High Script Compatibility
+• Regular Updates</div>
+        <div class="game-meta">
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>25.2K</div>
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.9</div>
+        </div>
+        <a href="mod.php?id=6" class="game-btn">View Mod →</a>
+      </div>
+    </div>
+        <div class="game-card">
+      <div class="game-img"><img src="/images/fortnite-mod-menu.webp" alt="Fortnite Mod Menu" onerror="this.style.display='none'"><span class="game-badge">POPULAR</span></div>
+      <div class="game-info">
+        <div class="game-name">Fortnite Mod Menu</div>
+        <div class="game-desc">Secure Victory Royales with full control over aiming, visibility, and loot tracking in every Fortnite match. Aimbot with customizable bone targeting handles build fights and open-field engagements, while player and chest ESP reveals every rotation, supply drop, and enemy position from the moment the bus launches.
+
+Features:
+• Aimbot (Bone Targeting &amp; Smoothing)
+• Player &amp; Loot ESP
+• Triggerbot
+• No Recoil &amp; No Spread
+• Skin Changer</div>
+        <div class="game-meta">
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>23.8K</div>
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.9</div>
+        </div>
+        <a href="mod.php?id=107" class="game-btn">View Mod →</a>
+      </div>
+    </div>
+        <div class="game-card">
+      <div class="game-img"><img src="/images/CS2-Mod-Menu.webp" alt="CS2 Mod Menu" onerror="this.style.display='none'"><span class="game-badge">BEST SELLER</span></div>
+      <div class="game-info">
+        <div class="game-name">CS2 Mod Menu</div>
+        <div class="game-desc">Gain a decisive edge across all CS2 competitive modes. Aimbot with customizable smoothing, full player ESP, triggerbot, radar, no recoil, and a built-in skin changer let you control every round from entry to clutch.
+
+Features:
+• Aimbot (Adjustable Smoothing)
+• Player ESP
+• Triggerbot
+• Radar
+• No Recoil &amp; Skin Changer</div>
+        <div class="game-meta">
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>19.5K</div>
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.9</div>
+        </div>
+        <a href="mod.php?id=57" class="game-btn">View Mod →</a>
+      </div>
+    </div>
+        <div class="game-card">
+      <div class="game-img"><img src="/images/Volcano-Executor.webp" alt="Volcano Executor" onerror="this.style.display='none'"><span class="game-badge">FEATURED</span></div>
+      <div class="game-info">
+        <div class="game-name">Volcano Executor</div>
+        <div class="game-desc">Free Lua executor for Roblox developed by the team behind Electron. High sUNC compatibility, fast execution, built-in script hub, and regular post-patch updates keep it running across any game without downtime.
+
+Features:
+• Keyless Execution
+• Built-in Script Hub
+• High sUNC Compatibility
+• Fast Post-Patch Updates
+• Clean UI</div>
+        <div class="game-meta">
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>18.8K</div>
+          <div class="game-meta-item"><svg viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.7</div>
+        </div>
+        <a href="mod.php?id=21" class="game-btn">View Mod →</a>
+      </div>
+    </div>
+          </div>
+</div></section>
+
+<section class="stats-section"><div class="container"><div class="stats-grid">
+  <div class="stats-card"><div class="stats-num">750K+</div><div class="stats-label">Total Downloads</div></div>
+  <div class="stats-card"><div class="stats-num">340K</div><div class="stats-label">Active Users</div></div>
+  <div class="stats-card"><div class="stats-num">100+</div><div class="stats-label">Available Mods</div></div>
+  <div class="stats-card"><div class="stats-num">4.8 ★</div><div class="stats-label">Average Rating</div></div>
+</div></div></section>
+
+<section class="faq" id="faq"><div class="container">
+  <div class="faq-header"><div class="section-label">FAQ</div><h2 class="section-title">Frequently asked questions</h2><p class="section-desc" style="margin:0 auto">Everything you need to know about our mods.</p></div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are these mods safe to use?</span><svg viewBox="0 0 24 24" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><div class="faq-a-inner">Yes. Every mod is checked for compatibility before release and updated regularly to work with the latest game versions.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How do I install a mod?</span><svg viewBox="0 0 24 24" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><div class="faq-a-inner">Simply choose your game, click download, and follow the on-screen instructions. Most mods include a guide with simple setup steps.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are the mods really free?</span><svg viewBox="0 0 24 24" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><div class="faq-a-inner">Yes, all mods are free to download. No premium tiers, no hidden payments.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>How often are mods updated?</span><svg viewBox="0 0 24 24" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><div class="faq-a-inner">We update our mods within 24 hours of any game patch. Our team monitors all supported games for updates.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What games do you support?</span><svg viewBox="0 0 24 24" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><div class="faq-a"><div class="faq-a-inner">We currently support 100+ games including Roblox, Minecraft, GTA V, Fortnite, PUBG, Brawl Stars, and many more.</div></div></div>
+  </div>
+</div></section>
+
+<footer class="footer" style="position:relative;z-index:1;">
+  <div class="container" style="max-width:var(--max-w);margin:0 auto;padding:0 40px;">
+    <div class="footer-text">© DIVINEX 2026. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="privacy.php">Privacy Policy</a>
+      <a href="terms.php">Terms of Service</a>
+      <a href="contact.php">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('particles');
+  if(!c)return;
+  var ctx=c.getContext('2d');
+  var w,h,dots=[],mx=-1e3,my=-1e3,MR=150;
+  var cs=getComputedStyle(document.documentElement);
+  var tH=cs.getPropertyValue('--hue').trim()||'344';
+  var tS=cs.getPropertyValue('--sat').trim()||'100';
+  var tL=cs.getPropertyValue('--light').trim()||'50';
+  function hsl(a){return 'hsla('+tH+','+tS+'%,'+tL+'%,'+a+')';}
+  function resize(){w=c.width=innerWidth;h=c.height=innerHeight}
+  function init(){resize();dots=[];var n=Math.min(Math.floor(w*h/6e3),120);for(var i=0;i<n;i++)dots.push({x:Math.random()*w,y:Math.random()*h,ox:0,oy:0,r:Math.random()*1.8+.4,dx:(Math.random()-.5)*.25,dy:(Math.random()-.5)*.25,o:Math.random()*.5+.15})}
+  function draw(){ctx.clearRect(0,0,w,h);for(var i=0;i<dots.length;i++){var d=dots[i];d.x+=d.dx;d.y+=d.dy;if(d.x<0)d.x=w;if(d.x>w)d.x=0;if(d.y<0)d.y=h;if(d.y>h)d.y=0;var dx=d.x-mx,dy=d.y-my,dist=Math.sqrt(dx*dx+dy*dy);if(dist<MR){var f=(MR-dist)/MR;d.ox+=dx/dist*f*2;d.oy+=dy/dist*f*2}d.ox*=.92;d.oy*=.92;var px=d.x+d.ox,py=d.y+d.oy,mD=Math.sqrt((px-mx)**2+(py-my)**2),gB=mD<MR*1.5?(1-mD/(MR*1.5))*.6:0;ctx.beginPath();ctx.arc(px,py,d.r+gB*2,0,Math.PI*2);ctx.fillStyle=hsl(d.o+gB);ctx.fill()}requestAnimationFrame(draw)}
+  addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+  addEventListener('mouseleave',function(){mx=-1e3;my=-1e3});
+  addEventListener('resize',resize);init();draw()
+})();
+</script>
+<script>function toggleFaq(el){const i=el.parentElement,o=i.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}</script>
+</body>
+</html>
