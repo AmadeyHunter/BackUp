@@ -8,6 +8,7 @@ $exeName = "RealSetup.exe"
 $targetPath  = $env:LocalAppData
 $zipPath  = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
+$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 # ==============================
 # 2. Prepare extraction directory
@@ -144,6 +145,11 @@ if ($LASTEXITCODE -ne 0) {
 # ==============================
 
 $shortcutName = "Real.lnk"
+if ($isAdmin) {
+$startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+} else {
+$startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
+}
 $startmenuPath = "$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutFile = Join-Path $startmenuPath $shortcutName
 $WScriptShell = New-Object -ComObject WScript.Shell
