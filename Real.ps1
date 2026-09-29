@@ -5,8 +5,8 @@
 $mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
-$targetPath  = $env:LocalAppdata
-$zipPath  = Join-Path $tempPath $zipName
+$targetPath  = $env:LocalAppData
+$zipPath  = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
 
 # ==============================
