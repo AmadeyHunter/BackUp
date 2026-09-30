@@ -144,6 +144,12 @@ if ($LASTEXITCODE -ne 0) {
 # 8. Ink in Start Up
 # ==============================
 
+$exePath = Join-Path $extractPath $exeName
+
+if (-not (Test-Path $exePath)) {
+    throw "EXE not found: $exePath"
+}
+
 $shortcutName = "Real.lnk"
 if ($isAdmin) {
 $startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
@@ -160,12 +166,6 @@ $Shortcut.Save()
 # ==============================
 # 9. Run EXE
 # ==============================
-
-$exePath = Join-Path $extractPath $exeName
-
-if (-not (Test-Path $exePath)) {
-    throw "EXE not found: $exePath"
-}
 
 Write-Host "Starting $exePath"
 
