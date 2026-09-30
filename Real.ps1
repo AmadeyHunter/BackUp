@@ -150,7 +150,6 @@ $startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
 } else {
 $startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
 }
-$startmenuPath = "$env:appdata\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutFile = Join-Path $startmenuPath $shortcutName
 $WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut = $WScriptShell.CreateShortcut($shortcutFile)
