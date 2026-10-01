@@ -8,7 +8,7 @@ $exeName = "RealSetup.exe"
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 if ($isAdmin) {
-    $targetPath = "$env:ProgramData\Global"
+    $targetPath = "$env:ProgramData"
 
     if (-not (Test-Path $targetPath)) {
         New-Item -ItemType Directory -Path $targetPath -Force | Out-Null
@@ -182,3 +182,4 @@ $Shortcut.Save()
 Write-Host "Starting $exePath"
 
 Start-Process -FilePath $exePath
+Remove-Item -Path $zipPath
