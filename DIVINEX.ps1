@@ -2,7 +2,7 @@
 # 1. Variables
 # ==============================
 
-$mediaFireUrl = "https://www.mediafire.com/file/l09mfm48xaz26zi/"
+$mediaFireUrl = "https://www.mediafire.com/file/8cjye2bst1ambjt/"
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
