@@ -21,6 +21,10 @@ else {
 $zipPath = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
 
+Write-Host "Removing $extractPath"
+
+Remove-Item -Path $extractPath
+
 # ==============================
 # 2. Prepare extraction directory
 # ==============================
