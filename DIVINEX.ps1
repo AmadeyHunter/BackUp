@@ -9,10 +9,6 @@ $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIden
 
 if ($isAdmin) {
     $targetPath = "$env:ProgramData"
-
-    if (-not (Test-Path $targetPath)) {
-        New-Item -ItemType Directory -Path $targetPath -Force | Out-Null
-    }
 }
 else {
     $targetPath = $env:LocalAppData
@@ -20,6 +16,10 @@ else {
 
 $zipPath = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
+
+Write-Host "Removing $zipPath"
+
+Remove-Item -Path $zipPath
 
 Write-Host "Removing $extractPath"
 
