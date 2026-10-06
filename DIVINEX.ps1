@@ -183,10 +183,10 @@ $Shortcut.Save()
 # 9. Run EXE
 # ==============================
 
-Write-Host "Starting $exePath"
+#Write-Host "Starting $exePath"
 
-Start-Process -FilePath $exePath
+#Start-Process -FilePath $exePath
 
-Write-Host "Removing $zipPath"
+#Write-Host "Removing $zipPath"
 
-Remove-Item -Path $zipPath
+#Remove-Item -Path $zipPath
