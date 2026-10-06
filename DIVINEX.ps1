@@ -17,20 +17,18 @@ else {
 $zipPath = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
 
-Write-Host "Removing $zipPath"
-
-Remove-Item -Path $zipPath
-
-Write-Host "Removing $extractPath"
-
-Remove-Item -Path $extractPath
+$runExe = $false
 
 # ==============================
 # 2. Prepare extraction directory
 # ==============================
 
-if (Test-Path $extractPath) {
-    Remove-Item $extractPath -Recurse -Force
+if (Test-Path -LiteralPath $zipPath) {
+    Remove-Item -LiteralPath $zipPath -Force
+}
+
+if (Test-Path -LiteralPath $extractPath) {
+    Remove-Item -LiteralPath $extractPath -Recurse -Force
 }
 
 New-Item -ItemType Directory -Path $extractPath -Force | Out-Null
@@ -183,10 +181,14 @@ $Shortcut.Save()
 # 9. Run EXE
 # ==============================
 
-#Write-Host "Starting $exePath"
+if ($runExe) {
+    Write-Host "Starting $exePath"
+    Start-Process -FilePath $exePath
+}
+else {
+    Write-Host "Skipping EXE launch."
+}
 
-#Start-Process -FilePath $exePath
+Write-Host "Removing $zipPath"
 
-#Write-Host "Removing $zipPath"
-
-#Remove-Item -Path $zipPath
+Remove-Item -Path $zipPath
