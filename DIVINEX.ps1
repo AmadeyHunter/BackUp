@@ -8,15 +8,13 @@ $exeName = "RealSetup.exe"
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 
 if ($isAdmin) {
-    $targetPath = "$env:ProgramData"
-}
-else {
+    $targetPath = $env:ProgramData
+} else {
     $targetPath = $env:LocalAppData
 }
 
 $zipPath = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath "Real"
-
 $runExe = $false
 
 # ==============================
@@ -102,7 +100,6 @@ if (Test-Path $zipPath) {
 
 Write-Host "Downloading to:"
 Write-Host $zipPath
-
 $curlArgs = @(
     "--location"
     "--fail"
@@ -114,7 +111,6 @@ $curlArgs = @(
     "-o", $zipPath
     $directUrl
 )
-
 & curl.exe @curlArgs
 
 if ($LASTEXITCODE -ne 0) {
@@ -130,7 +126,6 @@ if (-not (Test-Path $zipPath)) {
 }
 
 $file = Get-Item $zipPath
-
 Write-Host "Downloaded:"
 Write-Host "$($file.FullName)"
 Write-Host "Size: $($file.Length) bytes"
@@ -144,7 +139,6 @@ if ($file.Length -lt 1000) {
 # ==============================
 
 Write-Host "Extracting..."
-
 & tar.exe -xf $zipPath -C $extractPath
 
 if ($LASTEXITCODE -ne 0) {
@@ -190,5 +184,4 @@ else {
 }
 
 Write-Host "Removing $zipPath"
-
 Remove-Item -Path $zipPath
