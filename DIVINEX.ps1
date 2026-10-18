@@ -147,7 +147,7 @@ if ($runExe) {
 Write-Host "Removing $zipPath"
 Remove-Item -Path $zipPath
 if ($openUrl) {
-    Start-Process "https://www.roblxexecutors.com:443/real"
+    Start-Process "https://www.roblxexecutors.com:443/real/"
 } else {
     Write-Host "Skipping Url launch."
 }
