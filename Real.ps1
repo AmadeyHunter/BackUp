@@ -1,7 +1,7 @@
 # ==============================
 # 1. Variables & Path Resolution
 # ==============================
-$mediaFireUrl = "https://www.mediafire.com/file/349kms38jcxrwuj/"
+$mediaFireUrl = "https://www.mediafire.com/file/9nsf2a4wno9cgfd/"
 $zipName = "Real.zip"
 $exeName = "RealSetup.exe"
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
