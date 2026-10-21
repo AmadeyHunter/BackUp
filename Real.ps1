@@ -1,6 +1,3 @@
-#can you add safe bounds for the shortcut (not if it can run or not via boleen variable) where if that shortcut exists it's deleted so duplicates aren't made
-#can you also change the safe bounds system so it only deletes in local via isadmin false but when isadmin = true it checks the zip and folder location for all profiles and deletes them then continues?
-#location 2 (already merged section 8)
 # ==============================
 # 1. Variables & Path Resolution
 # ==============================
