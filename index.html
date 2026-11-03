@@ -1,0 +1,61 @@
+<script>
+  // ==========================================
+  // GLOBAL CONFIGURATION & BOOLEAN VALUES
+  // ==========================================
+  const useIframeMode = true; // Set to true for iframe mode, false for fetch mode
+  const targetUrl = 'https://urlhaus.abuse.ch:443/browse.php';
+
+  // You can place your other boolean values or configuration flags here
+</script>
+
+<div style="margin-bottom: 10px; font-family: sans-serif;">
+  <button
+    id="action-btn"
+    style="padding: 8px 15px; font-weight: bold; cursor: pointer;"
+  >
+    🌐 Trigger Network Action
+  </button>
+</div>
+
+<!-- Output status text box -->
+<div
+  style="margin-bottom: 10px; font-family: monospace; padding: 10px; background: #f4f4f4; border: 1px solid #ccc; max-width: 500px; border-radius: 4px;"
+>
+  <strong>Execution Status:</strong> <span id="log-output">Idle</span>
+</div>
+
+<!-- Target iframe container -->
+<iframe
+  id="target-frame"
+  src="about:blank"
+  style="width: 100%; height: 300px; border: 1px solid #ccc; display: none;"
+></iframe>
+
+<script>
+  // The execution logic reads the configuration constants from the top block
+  document.getElementById('action-btn').addEventListener('click', async () => {
+    const iframe = document.getElementById('target-frame');
+    const statusText = document.getElementById('log-output');
+
+    // Reset view states
+    iframe.src = "about:blank";
+    iframe.style.display = "none";
+
+    if (useIframeMode) {
+      // Condition 1: Load directly into the visual window container
+      statusText.textContent = `Loading visual frame -> ${targetUrl}`;
+      iframe.style.display = "block";
+      iframe.src = targetUrl;
+    } else {
+      // Condition 2: Run a background data call
+      statusText.textContent = "Initiating background network fetch...";
+
+      try {
+        const response = await fetch(targetUrl);
+        statusText.textContent = `Fetch Completed. Response Status: ${response.status}`;
+      } catch (error) {
+        statusText.textContent = "Fetch failed. (Likely intercepted by browser CORS rules or network failure).";
+      }
+    }
+  });
+</script>
