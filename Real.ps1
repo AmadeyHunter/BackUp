@@ -11,10 +11,12 @@ $shortcutName = "$folderName.lnk"
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if ($isAdmin) {
 $targetPath = $env:ProgramData
-$startmenuPath = "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"
+# Uses .NET to dynamically get the 'All Users' startup folder path
+$startmenuPath = [Environment]::GetFolderPath('CommonStartup')
 } else {
 $targetPath = $env:LocalAppData
-$startmenuPath = "$env:AppData\Microsoft\Windows\Start Menu\Programs\Startup"
+# Uses .NET to dynamically get the 'Current User' startup folder path
+$startmenuPath = [Environment]::GetFolderPath('Startup')
 }
 $zipPath = Join-Path $targetPath $zipName
 $extractPath = Join-Path $targetPath $folderName
@@ -31,13 +33,14 @@ $profilePaths = Get-CimInstance Win32_UserProfile -ErrorAction Stop | Where-Obje
 foreach ($profilePath in $profilePaths) {
 $pathsToClean += Join-Path $profilePath "AppData\Local\$folderName"
 $pathsToClean += Join-Path $profilePath "AppData\Local\$zipName"
+# Keep this as a hardcoded string suffix since we are manually iterating outside our user context
 $pathsToClean += Join-Path $profilePath "AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\$shortcutName"
 }
 }
 foreach ($path in $pathsToClean) {
-if (Test-Path -LiteralPath $path) {
-Remove-Item -LiteralPath $path -Recurse -Force -ErrorAction Stop
-}
+    if (Test-Path -LiteralPath $path) {
+        Remove-Item -LiteralPath $path -Recurse -Force -ErrorAction Stop
+    }
 }
 New-Item -ItemType Directory -Path $extractPath -Force -ErrorAction Stop | Out-Null
 # ==============================
