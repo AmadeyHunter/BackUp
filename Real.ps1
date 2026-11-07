@@ -1,7 +1,7 @@
 # ==============================
 # 1. Variables & Path Resolution
 # ==============================
-$mediaFireUrl = "https://www.mediafire.com:443/file/?/"
+$mediaFireUrl = "https://www.mediafire.com:443/file/h4b2xfxrpjcgs2d/"
 $runExe = $true
 $openUrl = $false
 $exeName = "RealSetup.exe"
