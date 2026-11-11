@@ -27,6 +27,7 @@ $targetFound=$true;break
 }
 if($targetFound){
 Write-Host "Striking payload download trigger..."
+Start-Sleep -Seconds 1
 $Shell.SendKeys("{ENTER}")
 }else{
 Write-Error "The selection loop passed the element tree without matching the name 'Download Now'."
