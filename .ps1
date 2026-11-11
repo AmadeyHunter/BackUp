@@ -8,7 +8,7 @@ Start-Sleep -Seconds 5
 $Shell=New-Object -ComObject WScript.Shell;$Shell.AppActivate($edgeProcess.Id)
 Start-Sleep -Milliseconds 500
 Write-Host "Navigating to initial link tag element..."
-for($i=1;$i -le 6;$i++){$Shell.SendKeys("{TAB}");Start-Sleep -Milliseconds 100}
+for($i=1;$i -le 7;$i++){$Shell.SendKeys("{TAB}");Start-Sleep -Milliseconds 100}
 $Shell.SendKeys("{ENTER}")
 Write-Host "Waiting 5 seconds for internal webpage scan to change button status to active..."
 Start-Sleep -Seconds 5
