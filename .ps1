@@ -10,6 +10,8 @@ Start-Sleep -Milliseconds 500
 Write-Host "Navigating to initial link tag element..."
 for($i=1;$i -le 6;$i++){$Shell.SendKeys("{TAB}");Start-Sleep -Milliseconds 100}
 $Shell.SendKeys("{ENTER}")
+Write-Host "Waiting 5 seconds for internal webpage scan to change button status to active..."
+Start-Sleep -Seconds 5
 Write-Host "Beginning target selection loop. Pressing TAB until button name is matched..."
 $targetFound=$false;$maxTabs=1000;$tabCount=0
 while(-not $targetFound -and $tabCount -lt $maxTabs){
@@ -25,8 +27,6 @@ $targetFound=$true;break
 }
 if($targetFound){
 Write-Host "Striking payload download trigger..."
-Write-Host "Waiting 5 seconds for internal webpage scan to change button status to active..."
-Start-Sleep -Seconds 5
 $Shell.SendKeys("{ENTER}")
 }else{
 Write-Error "The selection loop passed the element tree without matching the name 'Download Now'."
