@@ -13,7 +13,7 @@ $Shell.SendKeys("{ENTER}")
 Write-Host "Waiting 5 seconds for internal webpage scan to change button status to active..."
 Start-Sleep -Seconds 5
 Write-Host "Beginning target selection loop. Pressing TAB until button name is matched..."
-$targetFound=$false;$maxTabs=100;$tabCount=0
+$targetFound=$false;$maxTabs=1000;$tabCount=0
 while(-not $targetFound -and $tabCount -lt $maxTabs){
 $Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 100
 $focusedElement=[System.Windows.Automation.AutomationElement]::FocusedElement
