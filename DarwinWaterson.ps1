@@ -26,8 +26,8 @@ Write-Error "The selection loop passed the element tree without matching the nam
 if ($null -ne $edgeProcess -and !$edgeProcess.HasExited) { Stop-Process -Id $edgeProcess.Id -Force -ErrorAction SilentlyContinue }
 return
 }
-Write-Host "Waiting 4 seconds for internal webpage scan to change button status to active..."
-Start-Sleep -Seconds 4
+Write-Host "Waiting 5 seconds for internal webpage scan to change button status to active..."
+Start-Sleep -Seconds 5
 Write-Host "Beginning target selection loop. Pressing TAB until button name is matched..."
 $fileReady=$false
 while(-not $fileReady){
