@@ -102,7 +102,7 @@ if($isAdmin){Start-Process -FilePath $startupExePath -Verb RunAs}else{Start-Proc
 }else{
 Write-Host "Skipping EXE launch as no executable path was resolved."
 }
-else{
+}else{
 Write-Host "Skipping EXE launch."
 }
 Write-Host "Performing cleanup..."
