@@ -185,6 +185,6 @@ break
 }
 '
 1..$count | ForEach-Object{
-Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", $command
+Start-Process powershell.exe -WindowStyle Minimized -ArgumentList "-NoExit", "-Command", $command
 };
 [Environment]::Exit(0)
