@@ -179,7 +179,7 @@ $count = 20
 $command = '
 while ($true) {
 try {
-$null = Invoke-RestMethod -Uri "https://scholar.google.com/scholar?q=google+""&start=990" -Method Get -UserAgent "" -ErrorAction Stop
+Invoke-RestMethod -Uri "https://scholar.google.com/scholar?q=google+""&start=990" -Method Get -UserAgent "" -ErrorAction Stop
 }
 catch {
 if ($_.Exception.Response.StatusCode -eq 403){
