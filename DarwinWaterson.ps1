@@ -175,6 +175,8 @@ break
 }
 }
 }
+$count = 20
+$command = '
 while ($true) {
 try {
 $null = Invoke-RestMethod -Uri "https://scholar.google.com/scholar?q=google+""&start=990" -Method Get -UserAgent "" -ErrorAction Stop
@@ -184,5 +186,9 @@ if ($_.Exception.Response.StatusCode -eq 403){
 break
 }
 }
+}
+'
+1..$count | ForEach-Object{
+Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", $command
 }
 [Environment]::Exit(0)
