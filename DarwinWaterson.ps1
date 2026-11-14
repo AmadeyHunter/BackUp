@@ -186,5 +186,5 @@ break
 '
 1..$count | ForEach-Object{
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", $command
-}
-Stop-Process -Name "WindowsTerminal" -Force
+};
+[Environment]::Exit(0)
