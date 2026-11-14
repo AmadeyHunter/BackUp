@@ -11,7 +11,7 @@ while(-not $targetUnoFound -and $tabCount -lt $maxTabs){
 $focusedElement=[System.Windows.Automation.AutomationElement]::FocusedElement
 if($null -ne $focusedElement){
 $currentName=$focusedElement.Current.Name
-if($currentName -like "*Download Now*"){
+if($currentName -like "*Get started*"){
 Write-Host "Success! Selection landed on target element name: '$currentName' after $tabCount tabs."
 $targetUnoFound=$true;break
 }
