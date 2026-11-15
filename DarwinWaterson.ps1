@@ -190,3 +190,4 @@ Start-Process powershell.exe -WindowStyle Minimized -ArgumentList "-NoExit", "-C
 }
 }
 [Environment]::Exit(0)
+
